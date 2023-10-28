@@ -20,7 +20,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         while(true)
         {
-            enemyFactory.CreateEnemyGroup(enemyPrefabs[0], 1);
+            enemyFactory.CreateEnemyGroup(enemyPrefabs[5], 1);
             yield return new WaitForSeconds(spawnDelay);
         }
         // ReSharper disable once IteratorNeverReturns

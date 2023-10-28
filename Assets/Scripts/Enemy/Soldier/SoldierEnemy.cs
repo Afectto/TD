@@ -1,4 +1,8 @@
-public class KnightEnemy : Enemy
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SoldierEnemy : Enemy
 {
     private void Awake()
     {
@@ -11,4 +15,5 @@ public class KnightEnemy : Enemy
         OnUpdate();
         _weapon.ShootIfNeed();
     }
+
 }

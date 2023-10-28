@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 2
-  _attackRate: 1.25
+  _attackRate: 1.35
   target: {fileID: 0}
   _isShoot: 0
 --- !u!1 &1000011164445256

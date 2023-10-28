@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff407faed044ddc439e0b68cf841b1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 35
+  _health: 12
   _speed: 1
   healthBar: {fileID: 2503497176005900087}
   isNeedMove: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931506faf1e633444a9b2076870250f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 3
+  _damage: 7
   _attackRate: 1.25
   target: {fileID: 0}
   _isShoot: 0

@@ -31,10 +31,16 @@
             <e p="BaseHealth.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
-            <e p="ArcherEnemy.cs" t="Include" />
-            <e p="ArcherEnemyTriger.cs" t="Include" />
+            <e p="Archer" t="Include">
+              <e p="ArcherEnemy.cs" t="Include" />
+              <e p="ArcherEnemyTriger.cs" t="Include" />
+            </e>
             <e p="Enemy.cs" t="Include" />
-            <e p="KnightEnemy.cs" t="Include" />
+            <e p="EnemyTriger.cs" t="Include" />
+            <e p="Knight" t="Include">
+              <e p="KnightEnemy.cs" t="Include" />
+              <e p="KnightEnemyTriger.cs" t="Include" />
+            </e>
             <e p="Spawn Enemy" t="Include">
               <e p="EnemyFactory.cs" t="Include" />
               <e p="SpawnEnemy.cs" t="Include" />
@@ -43,6 +49,7 @@
           <e p="Interfaces" t="Include">
             <e p="IAttacker.cs" t="Include" />
             <e p="IDamageable.cs" t="Include" />
+            <e p="IEnemyWeapon.cs" t="Include" />
             <e p="IMovable.cs" t="Include" />
             <e p="IShooter.cs" t="Include" />
           </e>
@@ -51,16 +58,23 @@
             <e p="TowerTriger.cs" t="Include" />
           </e>
           <e p="Weapons" t="Include">
-            <e p="ArcherWeapon.cs" t="Include" />
-            <e p="Bullet" t="Include">
+            <e p="BaseWeapon" t="Include">
+              <e p="ShooterWeapon.cs" t="Include" />
+              <e p="Weapon.cs" t="Include" />
+            </e>
+            <e p="BulletWeapon" t="Include">
               <e p="Bullet.cs" t="Include" />
               <e p="BulletArrowArcher.cs" t="Include" />
               <e p="BulletTower.cs" t="Include" />
             </e>
-            <e p="ShooterWeapon.cs" t="Include" />
-            <e p="Weapon.cs" t="Include" />
-            <e p="WeaponsTowerArray.cs" t="Include" />
-            <e p="WeaponTowerArrow.cs" t="Include" />
+            <e p="EnemyWeapon" t="Include">
+              <e p="ArcherWeapon.cs" t="Include" />
+              <e p="KnightWeapon.cs" t="Include" />
+            </e>
+            <e p="TowerWeapon" t="Include">
+              <e p="WeaponsTowerArray.cs" t="Include" />
+              <e p="WeaponTowerArrow.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Tilemap" t="Include" />

@@ -21,6 +21,11 @@ public abstract class Weapon : MonoBehaviour, IAttacker
             }
         }
     }
-    
-    public abstract IEnumerator Attack();
+
+    public virtual IEnumerator Attack()
+    {
+        _isShoot = true;
+        yield return new WaitForSeconds(attackRate);
+        _isShoot = false;
+    }
 }

@@ -1,22 +1,26 @@
-
 using System.Collections;
+using UnityEngine;
 
-public class ArcherWeapon : ShooterWeapon
+public class ArcherWeapon : ShooterWeapon, IEnemyWeapon
 {
+    public Animator enemyAnimator { get; private set; }
+    private void Awake()
+    {
+        enemyAnimator = GetComponentInParent<Enemy>()?._animation;
+    }
+    
+    public void PlayAttackAnimation()
+    {
+        enemyAnimator.Play("attack");
+        enemyAnimator.speed = enemyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length / attackRate;
+    }
+
     public override IEnumerator Attack()
     {
-        playAttackAnimation();
+        PlayAttackAnimation();
         
         return base.Attack();
     }
 
-    private void playAttackAnimation()
-    {
-        var enemy = GetComponentInParent<Enemy>();
-        // ReSharper disable once Unity.NoNullPropagation
-        var animator = enemy?._animation;
-        animator.Play("attack");
-        animator.speed = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length / attackRate;
-    }
-    
+
 }

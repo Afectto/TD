@@ -1,10 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public abstract class ShooterWeapon : Weapon, IShooter
 {
+    public Transform _shootElement;
+    public GameObject _bulletPrefab;
+    public Transform shootElement { get => _shootElement; set => _shootElement = value; }
+    public GameObject bullet { get => _bulletPrefab; set => _bulletPrefab = value; }
+    
     protected Bullet bulletController;
     
     public override IEnumerator Attack()
@@ -19,8 +22,5 @@ public abstract class ShooterWeapon : Weapon, IShooter
         _isShoot = false;
     }
 
-    public Transform _shootElement;
-    public GameObject _bulletPrefab;
-    public Transform shootElement { get => _shootElement; set => _shootElement = value; }
-    public GameObject bullet { get => _bulletPrefab; set => _bulletPrefab = value; }
+
 }

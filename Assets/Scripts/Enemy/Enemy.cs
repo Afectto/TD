@@ -17,7 +17,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     
     protected Transform _target;
     private Rigidbody2D _rigidbody2D;
-    public Animator _animation;
+    [HideInInspector]public Animator _animation;
     
     public float rewardValue;
 

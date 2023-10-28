@@ -7,8 +7,6 @@ public abstract class Weapon : MonoBehaviour, IAttacker
     [SerializeField, Min(0)] private float _attackRate;
     public float damage { get => _damage; set => _damage = value; }
     public float attackRate { get => _attackRate; set => _attackRate = value; }
-
-    public abstract IEnumerator Attack();
     
     [HideInInspector]public Transform target;
     public bool _isShoot;
@@ -23,5 +21,6 @@ public abstract class Weapon : MonoBehaviour, IAttacker
             }
         }
     }
-
+    
+    public abstract IEnumerator Attack();
 }

@@ -11,6 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     public float spawnDelay;
     [SerializeField]public EnemyFactory enemyFactory;
     public bool isNeedSpawn = true;
+    public int countEnemyInGroup = 1;
     private void Start()
     {
         if(isNeedSpawn) StartCoroutine(Spawn());
@@ -20,7 +21,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         while(true)
         {
-            enemyFactory.CreateEnemyGroup(enemyPrefabs[5], 1);
+            enemyFactory.CreateEnemyGroup(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], countEnemyInGroup);
             yield return new WaitForSeconds(spawnDelay);
         }
         // ReSharper disable once IteratorNeverReturns

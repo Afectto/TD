@@ -18,12 +18,15 @@
             <e p="Thief" t="Include" />
           </e>
           <e p="Original artwork" t="Include" />
-          <e p="Prefab" t="Include" />
           <e p="Scene" t="Include" />
           <e p="Sprite" t="Include" />
         </e>
         <e p="Palette" t="Include" />
-        <e p="Prefabs" t="Include" />
+        <e p="Prefabs" t="Include">
+          <e p="EnemyBulletPrefab" t="Include" />
+          <e p="EnemyPrefab" t="Include" />
+          <e p="TowerPrefabs" t="Include" />
+        </e>
         <e p="Resources" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
@@ -41,9 +44,21 @@
               <e p="KnightEnemy.cs" t="Include" />
               <e p="KnightEnemyTriger.cs" t="Include" />
             </e>
+            <e p="Priest" t="Include">
+              <e p="PriestEnemy.cs" t="Include" />
+              <e p="PriestEnemyTriger.cs" t="Include" />
+            </e>
+            <e p="Soldier" t="Include">
+              <e p="SoldierEnemy.cs" t="Include" />
+              <e p="SoldierEnemyTriger.cs" t="Include" />
+            </e>
             <e p="Spawn Enemy" t="Include">
               <e p="EnemyFactory.cs" t="Include" />
               <e p="SpawnEnemy.cs" t="Include" />
+            </e>
+            <e p="Thief" t="Include">
+              <e p="ThiefEnemyTriger.cs" t="Include" />
+              <e p="TiefEnemy.cs" t="Include" />
             </e>
           </e>
           <e p="Interfaces" t="Include">
@@ -53,12 +68,17 @@
             <e p="IMovable.cs" t="Include" />
             <e p="IShooter.cs" t="Include" />
           </e>
+          <e p="Shop" t="Include">
+            <e p="Shop.cs" t="Include" />
+            <e p="Slot.cs" t="Include" />
+          </e>
           <e p="Tower" t="Include">
             <e p="Tower.cs" t="Include" />
             <e p="TowerTriger.cs" t="Include" />
           </e>
           <e p="Weapons" t="Include">
             <e p="BaseWeapon" t="Include">
+              <e p="MeleeWeapon.cs" t="Include" />
               <e p="ShooterWeapon.cs" t="Include" />
               <e p="Weapon.cs" t="Include" />
             </e>
@@ -70,6 +90,9 @@
             <e p="EnemyWeapon" t="Include">
               <e p="ArcherWeapon.cs" t="Include" />
               <e p="KnightWeapon.cs" t="Include" />
+              <e p="PriestWeapon.cs" t="Include" />
+              <e p="SoldierWeapon.cs" t="Include" />
+              <e p="ThiefWeapon.cs" t="Include" />
             </e>
             <e p="TowerWeapon" t="Include">
               <e p="WeaponsTowerArray.cs" t="Include" />

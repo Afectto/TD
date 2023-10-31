@@ -1,5 +1,3 @@
-using System;
-
 public class ArcherEnemy : Enemy
 {
     private void Awake()

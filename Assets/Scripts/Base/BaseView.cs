@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class BaseView : MonoBehaviour
@@ -38,11 +37,10 @@ public class BaseView : MonoBehaviour
     
     public void TakeDamage(float aDamage)
     {
-        // _baseHealth.TakeDamage(aDamage);
         _myBase.TakeDamage(CalculateDamageRedaction(aDamage));
     }
 
-    private float CalculateDamageRedaction(float baseDamage)
+    private float CalculateDamageRedaction(float aDamage)
     {
         var armor = _myBase.CurrentStats.Armor;
         float rez = 1;
@@ -54,7 +52,7 @@ public class BaseView : MonoBehaviour
             rez = rez * armor / 60;
         }
 
-        return baseDamage * (1 - Mathf.Clamp(rez, 0f, 0.95f));
+        return aDamage * (1 - Mathf.Clamp(rez, 0f, 0.95f));
     }
 
     private void Update()

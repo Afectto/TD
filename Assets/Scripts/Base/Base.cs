@@ -10,6 +10,7 @@ public class Base : IBuffable, IDamageable
     private readonly List<IBuff> _buffs = new List<IBuff>();
 
     private readonly List<IBuff> appliedBuffs = new List<IBuff>();
+    public event Action<float> OnHealthChanged;
 
     public Base(BaseStats baseStats)
     {
@@ -49,8 +50,6 @@ public class Base : IBuffable, IDamageable
         }
 
     }
-
-    public event Action<float> OnHealthChanged;
 
     public float maxHealth
     {

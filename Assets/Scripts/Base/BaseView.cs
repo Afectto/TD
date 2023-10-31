@@ -19,12 +19,17 @@ public class BaseView : MonoBehaviour
         };
         
         Init(new Base(stats));
-        
+        _myBase.OnHealthChanged += OnHealthChanged;
         _baseHealth = FindObjectOfType<BaseHealth>();
         
         _baseHealth.health = _baseHealth.maxHealth = _health;
     }
-
+    
+    private void OnHealthChanged(float newHealth)
+    {
+        _baseHealth.UpdateHealth(_myBase.CurrentStats);
+    }
+    
     public void Init(Base myBase)
     {
         _myBase = myBase;
@@ -35,9 +40,21 @@ public class BaseView : MonoBehaviour
     {
         // _baseHealth.TakeDamage(aDamage);
         _myBase.TakeDamage(CalculateDamageRedaction(aDamage));
+    }
+
+    private float CalculateDamageRedaction(float baseDamage)
+    {
+        var armor = _myBase.CurrentStats.Armor;
+        float rez = 1;
+        float a = 0.95f / (1 - Mathf.Log(1000f));
+        rez = a * (1 - Mathf.Log( armor + 1));
         
-        _baseHealth.health = _myBase.health;
-        _baseHealth.UpdateHealth(_myBase.CurrentStats);
+        if(armor > 60)
+        {
+            rez = rez * armor / 60;
+        }
+
+        return baseDamage * (1 - Mathf.Clamp(rez, 0f, 0.95f));
     }
 
     private void Update()
@@ -65,26 +82,10 @@ public class BaseView : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             var newHealth = _myBase.health + _myBase.CurrentStats.HealthRegen / 5;
             _myBase.health = Mathf.Clamp(newHealth, 0, _myBase.maxHealth);
-            _baseHealth.UpdateHealth(_myBase.CurrentStats);
         }
         // ReSharper disable once IteratorNeverReturns
     }
 
-    private float CalculateDamageRedaction(float baseDamage)
-    {
-        var armor = _myBase.CurrentStats.Armor;
-        float rez = 1;
-        float a = 0.95f / (1 - Mathf.Log(1000f));
-        rez = a * (1 - Mathf.Log( armor + 1));
-        
-        if(armor > 60)
-        {
-            rez = rez * armor / 60;
-        }
-
-        return baseDamage * (1 - Mathf.Clamp(rez, 0f, 0.95f));
-    }
-    
     private void OnDestroy()
     {
         StopCoroutine(RegenerateHealth());

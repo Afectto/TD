@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public class Base : IBuffable, IDamageable
 {
     public BaseStats BaseStats { get; }
     public BaseStats CurrentStats { get; private set; }
-    
+
     private readonly List<IBuff> _buffs = new List<IBuff>();
-    
+
     private readonly List<IBuff> appliedBuffs = new List<IBuff>();
 
     public Base(BaseStats baseStats)
@@ -15,7 +16,7 @@ public class Base : IBuffable, IDamageable
         BaseStats = baseStats;
         CurrentStats = baseStats;
     }
-    
+
     public void AddBuff(IBuff buff)
     {
         _buffs.Add(buff);
@@ -34,7 +35,8 @@ public class Base : IBuffable, IDamageable
     public float health
     {
         get => CurrentStats.Health;
-        set =>
+        set
+        {
             CurrentStats = new BaseStats
             {
                 Health = value,
@@ -43,13 +45,18 @@ public class Base : IBuffable, IDamageable
                 HealthRegen = CurrentStats.HealthRegen,
                 Income = CurrentStats.Income
             };
-        
+            OnHealthChanged?.Invoke(value);
+        }
+
     }
+
+    public event Action<float> OnHealthChanged;
 
     public float maxHealth
     {
         get => CurrentStats.MaxHealth;
-        set =>
+        set
+        {
             CurrentStats = new BaseStats
             {
                 Health = CurrentStats.Health,
@@ -58,6 +65,8 @@ public class Base : IBuffable, IDamageable
                 HealthRegen = CurrentStats.HealthRegen,
                 Income = CurrentStats.Income
             };
+            OnHealthChanged?. Invoke(value);
+        }
     }
 
     public void TakeDamage(float aDamage)

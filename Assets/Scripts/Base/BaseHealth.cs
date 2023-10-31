@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BaseHealth : MonoBehaviour, IDamageable
+public class BaseHealth : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
     public float health { get ; set ; }
@@ -25,23 +25,13 @@ public class BaseHealth : MonoBehaviour, IDamageable
         UpdateText();
     }
 
-    public void TakeDamage(float aDamage)
+    public void UpdateHealth(BaseStats baseStats)
     {
-        if (aDamage < 0 && health >= maxHealth)
-        {
-            health = maxHealth;
-        }
-        else if (health <= 0 && aDamage > 0)
-        {
-            health = 0;
-        }
-        else
-        {	
-            health -= aDamage;
-        }
-
+        health = baseStats.Health;
+        maxHealth = baseStats.MaxHealth;
         if (healthBar) healthBar.fillAmount = health / maxHealth;
     }
+ 
 
     private void UpdateText()
     {

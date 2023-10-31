@@ -31,7 +31,17 @@
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Base" t="Include">
+            <e p="Base.cs" t="Include" />
             <e p="BaseHealth.cs" t="Include" />
+            <e p="BaseView.cs" t="Include" />
+          </e>
+          <e p="Buffs" t="Include">
+            <e p="BaseBuff" t="Include">
+              <e p="HealthBaseBuff.cs" t="Include" />
+              <e p="HealthRegenerateBaseBuff.cs" t="Include" />
+            </e>
+            <e p="BaseStats.cs" t="Include" />
+            <e p="TowerWeponBuff" t="Include" />
           </e>
           <e p="Enemy" t="Include">
             <e p="Archer" t="Include">
@@ -62,6 +72,10 @@
             </e>
           </e>
           <e p="Interfaces" t="Include">
+            <e p="Buff" t="Include">
+              <e p="IBuff.cs" t="Include" />
+              <e p="IBuffable.cs" t="Include" />
+            </e>
             <e p="IAttacker.cs" t="Include" />
             <e p="IDamageable.cs" t="Include" />
             <e p="IEnemyWeapon.cs" t="Include" />

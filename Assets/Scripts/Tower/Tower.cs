@@ -6,16 +6,14 @@ using UnityEngine.Serialization;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField, Min(1)]private float _health = 1;
-    private BaseHealth _baseHealth;
+	private BaseView _baseView;
 	private WeaponsTowerArray weaponsTowerArray;
 	
 	[HideInInspector]public Transform target;
 
     private void Awake()
     {
-	    _baseHealth = FindObjectOfType<BaseHealth>();
-	    _baseHealth.health = _baseHealth.maxHealth = _health;
+	    _baseView = FindObjectOfType<BaseView>();
 	    weaponsTowerArray = GetComponentInChildren<WeaponsTowerArray>();
 	    weaponsTowerArray.CreateArrowWeapon();
     }
@@ -31,7 +29,7 @@ public class Tower : MonoBehaviour
 
     public void TakeDamage(float aDamage)
 	{
-		_baseHealth.TakeDamage(aDamage);
+		_baseView.TakeDamage(aDamage);
 	}
 
 }

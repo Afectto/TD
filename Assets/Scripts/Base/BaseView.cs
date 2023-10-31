@@ -31,42 +31,31 @@ public class BaseView : MonoBehaviour
         StartCoroutine(RegenerateHealth());
     }
     
-
     public void TakeDamage(float aDamage)
     {
         // _baseHealth.TakeDamage(aDamage);
-        _myBase.TakeDamage(aDamage);
+        _myBase.TakeDamage(CalculateDamageRedaction(aDamage));
         
         _baseHealth.health = _myBase.health;
         _baseHealth.UpdateHealth(_myBase.CurrentStats);
     }
 
-    public void AddHealth()
-    {
-        _myBase.AddBuff(new HealthBaseBuff(10));
-        _baseHealth.UpdateHealth(_myBase.CurrentStats);
-    }
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddHealth();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            _myBase.AddBuff(new HealthBaseBuff(-50));
-            _baseHealth.UpdateHealth(_myBase.CurrentStats);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            _myBase.AddBuff(new HealthRegenerateBaseBuff(20));
-        }
-        
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            _myBase.AddBuff(new HealthRegenerateBaseBuff(-50));
-        }
+        // if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     _myBase.AddBuff(new HealthBaseBuff(-50));
+        //     _baseHealth.UpdateHealth(_myBase.CurrentStats);
+        // }
+        // if (Input.GetKeyDown(KeyCode.H))
+        // {
+        //     _myBase.AddBuff(new HealthRegenerateBaseBuff(20));
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.J))
+        // {
+        //     _myBase.AddBuff(new HealthRegenerateBaseBuff(-50));
+        // }
     }
 
     private IEnumerator RegenerateHealth()
@@ -79,6 +68,21 @@ public class BaseView : MonoBehaviour
             _baseHealth.UpdateHealth(_myBase.CurrentStats);
         }
         // ReSharper disable once IteratorNeverReturns
+    }
+
+    private float CalculateDamageRedaction(float baseDamage)
+    {
+        var armor = _myBase.CurrentStats.Armor;
+        float rez = 1;
+        float a = 0.95f / (1 - Mathf.Log(1000f));
+        rez = a * (1 - Mathf.Log( armor + 1));
+        
+        if(armor > 60)
+        {
+            rez = rez * armor / 60;
+        }
+
+        return baseDamage * (1 - Mathf.Clamp(rez, 0f, 0.95f));
     }
     
     private void OnDestroy()

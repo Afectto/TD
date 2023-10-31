@@ -43,6 +43,7 @@ public class Base : IBuffable, IDamageable
                 HealthRegen = CurrentStats.HealthRegen,
                 Income = CurrentStats.Income
             };
+        
     }
 
     public float maxHealth

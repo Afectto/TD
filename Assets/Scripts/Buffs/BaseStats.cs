@@ -1,4 +1,5 @@
-﻿public struct BaseStats
+﻿
+public struct BaseStats
 {
     public float Health;
     public float MaxHealth;

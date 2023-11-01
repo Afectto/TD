@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Base : IBuffable, IDamageable
 {
@@ -26,10 +25,10 @@ public class Base : IBuffable, IDamageable
 
     private void ApplyBuffs()
     {
-        foreach (var buff in _buffs.Where(buff => !appliedBuffs.Contains(buff)))
+        for (int i = appliedBuffs.Count; i < _buffs.Count; i++)
         {
-            CurrentStats = buff.ApplyBuff(CurrentStats);
-            appliedBuffs.Add(buff);
+            CurrentStats = _buffs[i].ApplyBuff(CurrentStats);
+            appliedBuffs.Add(_buffs[i]);
         }
     }
 

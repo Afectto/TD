@@ -25,9 +25,15 @@
         <e p="Prefabs" t="Include">
           <e p="EnemyBulletPrefab" t="Include" />
           <e p="EnemyPrefab" t="Include" />
+          <e p="Inventory" t="Include" />
           <e p="TowerPrefabs" t="Include" />
         </e>
-        <e p="Resources" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="Inventory" t="Include">
+            <e p="BaseBuff" t="Include" />
+            <e p="WeaponBuff" t="Include" />
+          </e>
+        </e>
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Base" t="Include">
@@ -37,8 +43,10 @@
           </e>
           <e p="Buffs" t="Include">
             <e p="BaseBuff" t="Include">
+              <e p="ArmorBaseBuff.cs" t="Include" />
               <e p="HealthBaseBuff.cs" t="Include" />
-              <e p="HealthRegenerateBaseBuff.cs" t="Include" />
+              <e p="HealthRegenBaseBuff.cs" t="Include" />
+              <e p="IncomeBaseBuff.cs" t="Include" />
             </e>
             <e p="BaseStats.cs" t="Include" />
             <e p="TowerWeponBuff" t="Include" />

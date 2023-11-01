@@ -29,6 +29,9 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         isNeedMove = true;
         _animation = GetComponent<Animator>();
         _weapon = GetComponent<Weapon>();
+        
+        // Vector2 direction = _target.position - transform.position;
+        // transform.localScale *= direction.x > 0 ? new Vector2(-1, 1): new Vector2(1, 1);
     }
     
    protected virtual void OnUpdate()
@@ -70,8 +73,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
             Vector2 direction = _target.position - transform.position;
             direction.Normalize();
             _rigidbody2D.velocity = direction * speed;
+            transform.localScale = new Vector3(direction.x > 0 ? -1 : 1, 1, 1);
             
-            transform.localScale= direction.x > 0 ? new Vector2(-1, 1): new Vector2(1, 1);
             _animation.Play("walk");
         }
         else

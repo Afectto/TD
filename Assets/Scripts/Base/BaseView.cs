@@ -89,4 +89,9 @@ public class BaseView : MonoBehaviour
         StopCoroutine(RegenerateHealth());
     }
 
+
+    public void AddBuff(IBuff buff)
+    {
+        _myBase.AddBuff(buff);
+    }
 }

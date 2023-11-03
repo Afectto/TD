@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
@@ -7,13 +8,11 @@ public abstract class Bullet : MonoBehaviour
 	private Vector3 lastEnemyPosition;
 	
 	public IAttacker firedBy;
-	private Transform startPosition;
 	private float distance;
-	
+
 	public void Initialize()
 	{
 		lastEnemyPosition = Vector3.zero;
-		startPosition = transform;
 	}
 
 	public void Update()
@@ -30,7 +29,8 @@ public abstract class Bullet : MonoBehaviour
 		
 		var targetPosition = target.position;
 		var transformPosition = transform.position;
-		
+
+
 		transformPosition = Vector3.MoveTowards(transformPosition, targetPosition, Time.deltaTime * speed);
 		transform.position = transformPosition;
 		lastEnemyPosition = targetPosition;

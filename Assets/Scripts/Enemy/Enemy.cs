@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,12 +20,14 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     [HideInInspector]public Animator _animation;
     
     public float rewardValue;
+    
+    public event Action<float> OnEnemyDead;
 
     protected void Initialize()
     {
         maxHealth = health;
         healthBar.fillAmount = 1;
-        _target = GameObject.FindObjectOfType<Tower>().transform;
+        _target = FindObjectOfType<Tower>().transform;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         isNeedMove = true;
         _animation = GetComponent<Animator>();
@@ -34,10 +37,11 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         // transform.localScale *= direction.x > 0 ? new Vector2(-1, 1): new Vector2(1, 1);
     }
     
-   protected virtual void OnUpdate()
+   protected void OnUpdate()
     {
         if (health <= 0)
         {
+            CoinManager.Instance.ChangeCoins(rewardValue);
             Destroy(gameObject);
         }
         

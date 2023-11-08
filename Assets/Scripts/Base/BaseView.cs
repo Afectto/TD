@@ -11,8 +11,6 @@ public class BaseView : MonoBehaviour
     [SerializeField]private Text timerText; 
     private Timer _timer;
     
-    [SerializeField]private Text coinCountText; 
-    private float _coinCount = 2000;
     [SerializeField] private Shop _shop;
     public void Init(Base myBase)
     {
@@ -20,7 +18,7 @@ public class BaseView : MonoBehaviour
         StartCoroutine(RegenerateHealth());
         
         StartCoroutine(Income());
-        coinCountText.text = Mathf.FloorToInt(_coinCount).ToString();
+        CoinManager.Instance.ChangeCoins(2000);
     }
 
     private void Awake()
@@ -36,14 +34,13 @@ public class BaseView : MonoBehaviour
         
         Init(new Base(stats));
         _myBase.OnHealthChanged += OnHealthChanged;
-        _myBase.OnAddBuff += OnAddBuff;
         _baseHealth = FindObjectOfType<BaseHealth>();
         
         _baseHealth.health = _baseHealth.maxHealth = _health;
         
         _timer = new Timer();
         _timer.Start();
-        _shop.OnRefresh += OnRefreshShop;
+        
     }
     
     private void Update()
@@ -99,29 +96,12 @@ public class BaseView : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            _coinCount += _myBase.IncomePerSecond;
-            coinCountText.text = Mathf.FloorToInt(_coinCount).ToString();
+            
+            CoinManager.Instance.ChangeCoins(_myBase.IncomePerSecond);
         }
         // ReSharper disable once IteratorNeverReturns
     }
 
-    public float getCoinCount()
-    {
-        return _coinCount;
-    }
-
-    private void OnAddBuff(float value)
-    {
-        _coinCount -= value;
-        coinCountText.text = Mathf.FloorToInt(_coinCount).ToString();
-    }
-
-    private void OnRefreshShop(float value)
-    {
-        _coinCount -= value;
-        coinCountText.text = Mathf.FloorToInt(_coinCount).ToString();
-    }
-    
     private void OnDestroy()
     {
         StopCoroutine(RegenerateHealth());

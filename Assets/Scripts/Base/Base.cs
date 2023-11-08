@@ -14,7 +14,6 @@ public class Base : IBuffable, IDamageable, ITimeBasedIncome
 
     private readonly List<IBuff> appliedBuffs = new List<IBuff>();
     public event Action<float> OnHealthChanged;
-    public event Action<float> OnAddBuff;
     public float IncomePerSecond { get => CurrentStats.Income; }
     
     public Base(BaseStats baseStats)
@@ -25,7 +24,7 @@ public class Base : IBuffable, IDamageable, ITimeBasedIncome
 
     public void AddBuff(IBuff buff)
     {
-        OnAddBuff.Invoke(buff.price);
+        CoinManager.Instance.ChangeCoins(-buff.price);
         _buffs.Add(buff);
         ApplyBuffs();
     }

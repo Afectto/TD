@@ -272,7 +272,7 @@ MonoBehaviour:
   healthBar: {fileID: 6134248707665345178}
   isNeedMove: 0
   _animation: {fileID: 0}
-  rewardValue: 0
+  rewardValue: 12
 --- !u!114 &4564610076423118487
 MonoBehaviour:
   m_ObjectHideFlags: 0

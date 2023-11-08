@@ -13,7 +13,6 @@ public class Shop : MonoBehaviour
     private bool _isInventoryOn;
     private BaseView _baseView;
     
-    public event Action<float> OnRefresh;
     private int _refreshCount = 1;
     [SerializeField] private Text _refreshValueText;
 
@@ -59,7 +58,7 @@ public class Shop : MonoBehaviour
         var obj = transform.GetChild(0);
         var buffs = transform.GetComponentInChildren<IBuff>();
             
-        if(_baseView.getCoinCount() > buffs.price)
+        if(CoinManager.Instance.coinCount > buffs.price)
         { 
             _baseView.AddBuff(buffs);
             Destroy(obj.gameObject);
@@ -70,14 +69,14 @@ public class Shop : MonoBehaviour
     public void UpdateShop()
     {
         var refreshValue = 100 + 50 * _refreshCount;
-        if (_baseView.getCoinCount() > refreshValue)
+        if (CoinManager.Instance.coinCount > refreshValue)
         {
             ClearShop();
 
             GenerateBaseBuffRow();
-            OnRefresh.Invoke(refreshValue);
             _refreshValueText.text = refreshValue.ToString();
             _refreshCount++;
+            CoinManager.Instance.ChangeCoins(-refreshValue);
         }
     }
 

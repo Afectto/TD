@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+public interface ITimeBasedIncome
+{
+    float IncomePerSecond { get; } 
 
-public class Base : IBuffable, IDamageable
+}
+public class Base : IBuffable, IDamageable, ITimeBasedIncome
 {
     public BaseStats BaseStats { get; }
     public BaseStats CurrentStats { get; private set; }
@@ -10,7 +14,9 @@ public class Base : IBuffable, IDamageable
 
     private readonly List<IBuff> appliedBuffs = new List<IBuff>();
     public event Action<float> OnHealthChanged;
-
+    public event Action<float> OnAddBuff;
+    public float IncomePerSecond { get => CurrentStats.Income; }
+    
     public Base(BaseStats baseStats)
     {
         BaseStats = baseStats;
@@ -19,6 +25,7 @@ public class Base : IBuffable, IDamageable
 
     public void AddBuff(IBuff buff)
     {
+        OnAddBuff.Invoke(buff.price);
         _buffs.Add(buff);
         ApplyBuffs();
     }
@@ -82,4 +89,5 @@ public class Base : IBuffable, IDamageable
             health -= aDamage;
         }
     }
+
 }

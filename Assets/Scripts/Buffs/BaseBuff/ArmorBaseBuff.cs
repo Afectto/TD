@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class ArmorBaseBuff : MonoBehaviour, IBuff
 {
     public float value { get; private set; }
+    private float _price = 500;
+    public float price { get => _price; }
 
     private readonly List<int> _possibleValue = new List<int>();
 
@@ -19,7 +21,10 @@ public class ArmorBaseBuff : MonoBehaviour, IBuff
         _possibleValue.Add(5);
         _possibleValue.Add(10);
         _possibleValue.Add(20);
-        value = _possibleValue[Random.Range(0, _possibleValue.Count)];
+        var index = Random.Range(0, _possibleValue.Count);
+        value = _possibleValue[index];
+        _price *= index + 1;
+        GetComponentInChildren<Text>().text = _price.ToString();
     }
     public BaseStats ApplyBuff(BaseStats baseStats)
     {

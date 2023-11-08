@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Shop : MonoBehaviour
 {
@@ -11,7 +13,10 @@ public class Shop : MonoBehaviour
     private bool _isInventoryOn;
     private BaseView _baseView;
     
-    
+    public event Action<float> OnRefresh;
+    private int _refreshCount = 1;
+    [SerializeField] private Text _refreshValueText;
+
     private void Start()
     {
         _isInventoryOn = false;
@@ -50,12 +55,40 @@ public class Shop : MonoBehaviour
     {
         var transform = slots[slotIndex].transform;
         
-        if(transform.childCount <= 1) return;
-        
-        var obj = transform.GetChild(1);
+        if(transform.childCount <= 0) return;
+        var obj = transform.GetChild(0);
         var buffs = transform.GetComponentInChildren<IBuff>();
-        _baseView.AddBuff(buffs);
-        Destroy(obj.gameObject);
+            
+        if(_baseView.getCoinCount() > buffs.price)
+        { 
+            _baseView.AddBuff(buffs);
+            Destroy(obj.gameObject);
+        }
+        
     }
-    
+
+    public void UpdateShop()
+    {
+        var refreshValue = 100 + 50 * _refreshCount;
+        if (_baseView.getCoinCount() > refreshValue)
+        {
+            ClearShop();
+
+            GenerateBaseBuffRow();
+            OnRefresh.Invoke(refreshValue);
+            _refreshValueText.text = refreshValue.ToString();
+            _refreshCount++;
+        }
+    }
+
+    private void ClearShop()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            var transform = slots[i].transform;
+            if(transform.childCount <= 0) return;
+            var obj = transform.GetChild(0);
+            Destroy(obj.gameObject);
+        } 
+    }
 }

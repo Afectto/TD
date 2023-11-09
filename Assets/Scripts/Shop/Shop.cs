@@ -13,8 +13,9 @@ public class Shop : MonoBehaviour
     private bool _isInventoryOn;
     private BaseView _baseView;
     
-    private int _refreshCount = 1;
+    private int _refreshCount = 0;
     [SerializeField] private Text _refreshValueText;
+    [SerializeField] private UpdateTimer _updateTimer;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class Shop : MonoBehaviour
         inventory.SetActive(false);
         
         _baseView = FindObjectOfType<BaseView>();
+        _updateTimer.OnTimerEnd += UpdateShop;
         
         GenerateBaseBuffRow();
     }
@@ -66,7 +68,7 @@ public class Shop : MonoBehaviour
         
     }
 
-    public void UpdateShop()
+    public void UpdateShop(bool isNeedIncrease)
     {
         var refreshValue = 100 + 50 * _refreshCount;
         if (CoinManager.Instance.coinCount > refreshValue)
@@ -74,9 +76,12 @@ public class Shop : MonoBehaviour
             ClearShop();
 
             GenerateBaseBuffRow();
-            _refreshValueText.text = refreshValue.ToString();
-            _refreshCount++;
-            CoinManager.Instance.ChangeCoins(-refreshValue);
+            if (isNeedIncrease)
+            {
+                refreshValue = 100 + 50 * ++_refreshCount;
+                _refreshValueText.text = refreshValue.ToString();
+                CoinManager.Instance.ChangeCoins(-refreshValue);
+            }
         }
     }
 
@@ -85,7 +90,7 @@ public class Shop : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             var transform = slots[i].transform;
-            if(transform.childCount <= 0) return;
+            if(transform.childCount <= 0) continue;
             var obj = transform.GetChild(0);
             Destroy(obj.gameObject);
         } 

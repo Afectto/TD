@@ -29,7 +29,7 @@ public class BaseView : MonoBehaviour
             MaxHealth = _health,
             HealthRegen = 0,
             Armor = 0,
-            Income = 1000f/30f
+            Income = 1000f/60f
         };
         
         Init(new Base(stats));
@@ -95,7 +95,7 @@ public class BaseView : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             
             CoinManager.Instance.ChangeCoins(_myBase.IncomePerSecond);
         }

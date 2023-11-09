@@ -45,6 +45,7 @@
             <e p="Base.cs" t="Include" />
             <e p="BaseHealth.cs" t="Include" />
             <e p="BaseView.cs" t="Include" />
+            <e p="CoinManager.cs" t="Include" />
             <e p="Timer.cs" t="Include" />
           </e>
           <e p="Buffs" t="Include">
@@ -99,6 +100,7 @@
           <e p="Shop" t="Include">
             <e p="Shop.cs" t="Include" />
             <e p="Slot.cs" t="Include" />
+            <e p="UpdateTimer.cs" t="Include" />
           </e>
           <e p="Tower" t="Include">
             <e p="Tower.cs" t="Include" />

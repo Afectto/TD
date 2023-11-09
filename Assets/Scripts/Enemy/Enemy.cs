@@ -20,8 +20,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     [HideInInspector]public Animator _animation;
     
     public float rewardValue;
-    
-    public event Action<float> OnEnemyDead;
 
     protected void Initialize()
     {
@@ -32,9 +30,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         isNeedMove = true;
         _animation = GetComponent<Animator>();
         _weapon = GetComponent<Weapon>();
-        
-        // Vector2 direction = _target.position - transform.position;
-        // transform.localScale *= direction.x > 0 ? new Vector2(-1, 1): new Vector2(1, 1);
     }
     
    protected void OnUpdate()

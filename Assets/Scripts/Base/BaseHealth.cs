@@ -34,6 +34,6 @@ public class BaseHealth : MonoBehaviour
 
     private void UpdateText()
     {
-        _health.text = health.ToString() + " / " + maxHealth.ToString();
+        _health.text = Mathf.FloorToInt(health) + " / " + Mathf.FloorToInt(maxHealth);
     }
 }

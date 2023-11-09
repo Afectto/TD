@@ -22,7 +22,7 @@ public class Timer
 
     public void Reset()
     {
-        startTime = 0f;
+        startTime = Time.time;
         currentTime = 0f;
     }
     

@@ -694,7 +694,7 @@ MonoBehaviour:
   spawnDelay: 5
   enemyFactory: {fileID: 1210492647}
   isNeedSpawn: 1
-  countEnemyInGroup: 1
+  countEnemyInGroup: 3
 --- !u!4 &318598784
 Transform:
   m_ObjectHideFlags: 0

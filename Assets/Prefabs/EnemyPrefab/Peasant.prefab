@@ -94,6 +94,7 @@ MonoBehaviour:
   _attackRate: 1.25
   target: {fileID: 0}
   _isShoot: 0
+  attackRange: 4
   _shootElement: {fileID: 8972628410978818459}
   _bulletPrefab: {fileID: 1567109214085733029, guid: 41a0ef3759d677c48acd6cbdc2fb6df2, type: 3}
 --- !u!50 &7161356026256982886

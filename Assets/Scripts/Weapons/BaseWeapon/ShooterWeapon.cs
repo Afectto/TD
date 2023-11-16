@@ -13,12 +13,15 @@ public abstract class ShooterWeapon : Weapon, IShooter
     public override IEnumerator Attack()
     {
         _isShoot = true;
-        
         yield return new WaitForSeconds(attackRate);
-        var mBullet = GameObject.Instantiate(bullet, shootElement.position, Quaternion.identity) as GameObject;
-        bulletController = mBullet.GetComponent<Bullet>();
-        bulletController.target = target;
-        bulletController.firedBy = this;
+        if (target)
+        {
+            var mBullet = GameObject.Instantiate(bullet, shootElement.position, Quaternion.identity) as GameObject;
+            bulletController = mBullet.GetComponent<Bullet>();
+            bulletController.target = target;
+            bulletController.firedBy = this;
+        }
+
         _isShoot = false;
     }
 

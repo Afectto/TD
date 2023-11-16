@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 424350801904895448}
   - component: {fileID: 5893000102104793680}
   m_Layer: 0
-  m_Name: WeaponTowerArrow
+  m_Name: WeaponTowerMultiArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1857e98a0b1994da3762cc02f34564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 3
-  _attackRate: 0.3
+  _damage: 9
+  _attackRate: 0.4
   target: {fileID: 0}
   _isShoot: 0
-  attackRange: 7.5
+  attackRange: 8.3
   _shootElement: {fileID: 0}
-  _bulletPrefab: {fileID: 1567109214085733029, guid: bfe30f138f9dc6845933f2110770fc8d, type: 3}
+  _bulletPrefab: {fileID: 1567109214085733029, guid: 2a9ed35a7f399674f96cd861acba1243, type: 3}
 --- !u!58 &5893000102104793680
 CircleCollider2D:
   m_ObjectHideFlags: 0

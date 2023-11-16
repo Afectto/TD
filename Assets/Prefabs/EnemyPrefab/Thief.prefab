@@ -716,6 +716,7 @@ MonoBehaviour:
   _attackRate: 0.75
   target: {fileID: 0}
   _isShoot: 0
+  attackRange: 1
 --- !u!1 &1000012730742446
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,9 +12,9 @@ public abstract class MeleeWeapon : Weapon, IEnemyWeapon
 
     public Animator enemyAnimator { get; private set; }
 
-    private void Awake()
+    protected void Initialize()
     {
-        enemyAnimator = GetComponentInParent<Enemy>()?._animation;
+        enemyAnimator = GetComponent<Enemy>()?._animation;
     }
 
     public void PlayAttackAnimation()

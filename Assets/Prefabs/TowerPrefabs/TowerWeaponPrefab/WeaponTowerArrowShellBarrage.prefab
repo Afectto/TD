@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8025879407955602100}
-  - component: {fileID: 424350801904895448}
+  - component: {fileID: 976765223836134810}
   - component: {fileID: 5893000102104793680}
   m_Layer: 0
-  m_Name: WeaponTowerArrow
+  m_Name: WeaponTowerArrowShellBarrage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &424350801904895448
+--- !u!114 &976765223836134810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,16 +42,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1055821524597340782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de1857e98a0b1994da3762cc02f34564, type: 3}
+  m_Script: {fileID: 11500000, guid: 4800b32a7a778d544bc8c21e9630d5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 3
-  _attackRate: 0.3
+  _damage: 2
+  _attackRate: 0.5
   target: {fileID: 0}
   _isShoot: 0
   attackRange: 7.5
   _shootElement: {fileID: 0}
   _bulletPrefab: {fileID: 1567109214085733029, guid: bfe30f138f9dc6845933f2110770fc8d, type: 3}
+  barrageCount: 3
+  delay: 0.1
 --- !u!58 &5893000102104793680
 CircleCollider2D:
   m_ObjectHideFlags: 0

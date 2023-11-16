@@ -96,6 +96,7 @@
             <e p="IEnemyWeapon.cs" t="Include" />
             <e p="IMovable.cs" t="Include" />
             <e p="IShooter.cs" t="Include" />
+            <e p="ITowerWeapon.cs" t="Include" />
           </e>
           <e p="Shop" t="Include">
             <e p="Shop.cs" t="Include" />
@@ -104,7 +105,6 @@
           </e>
           <e p="Tower" t="Include">
             <e p="Tower.cs" t="Include" />
-            <e p="TowerTriger.cs" t="Include" />
           </e>
           <e p="Weapons" t="Include">
             <e p="BaseWeapon" t="Include">
@@ -126,7 +126,8 @@
             </e>
             <e p="TowerWeapon" t="Include">
               <e p="WeaponsTowerArray.cs" t="Include" />
-              <e p="WeaponTowerArrow.cs" t="Include" />
+              <e p="WeaponTowerBullet.cs" t="Include" />
+              <e p="WeaponTowerShellBarrage.cs" t="Include" />
             </e>
           </e>
         </e>

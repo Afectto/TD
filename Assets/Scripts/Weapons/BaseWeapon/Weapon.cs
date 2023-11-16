@@ -10,7 +10,11 @@ public abstract class Weapon : MonoBehaviour, IAttacker
     
     [HideInInspector]public Transform target;
     public bool _isShoot;
-	
+
+    protected CircleCollider2D CircleCollider2D;
+    public float attackRange;
+
+
     public void ShootIfNeed()
     {
         if(target)

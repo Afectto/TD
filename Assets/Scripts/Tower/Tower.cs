@@ -11,9 +11,9 @@ public class Tower : MonoBehaviour
     {
 	    _baseView = FindObjectOfType<BaseView>();
 	    weaponsTowerArray = GetComponentInChildren<WeaponsTowerArray>();
-	    weaponsTowerArray.CreateArrowWeapon();
-	    weaponsTowerArray.CreateMultiArrowWeapon();
-	    weaponsTowerArray.CreateCannonballShellBarrageWeapon();
+	    // weaponsTowerArray.CreateArrowWeapon();
+	    // weaponsTowerArray.CreateMultiArrowWeapon();
+	    // weaponsTowerArray.CreateCannonballShellBarrageWeapon();
     }
 
     private void Update()
@@ -30,4 +30,12 @@ public class Tower : MonoBehaviour
 		_baseView.TakeDamage(aDamage);
 	}
 
+    public void AddWeapon(ITowerWeapon weapon)
+    {
+	    if (weapon is MonoBehaviour monoBehaviour)
+	    {
+		    GameObject weaponGameObject = monoBehaviour.gameObject;
+		    weaponsTowerArray.CreateWeapon(weaponGameObject.name);
+	    }
+    }
 }

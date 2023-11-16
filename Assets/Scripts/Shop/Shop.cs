@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour
     public GameObject[] slots;
     public GameObject inventory;
     public List<GameObject> BaseBuffPrefab;
+    public List<GameObject> WeaponsPrefab;
 
     private bool _isInventoryOn;
     private BaseView _baseView;
@@ -25,6 +26,7 @@ public class Shop : MonoBehaviour
         _updateTimer.OnTimerEnd += UpdateShop;
         
         GenerateBaseBuffRow();
+        GenerateWeaponRow();
     }
     
     public void Bug()
@@ -41,8 +43,7 @@ public class Shop : MonoBehaviour
         GetComponent<Image>().sprite = newSprite;
     }
 
-
-    public void GenerateBaseBuffRow()
+    private void GenerateBaseBuffRow()
     {
         for (int i = 0; i < 3; i++)
         {
@@ -58,15 +59,36 @@ public class Shop : MonoBehaviour
         if(transform.childCount <= 0) return;
         var obj = transform.GetChild(0);
         var buffs = transform.GetComponentInChildren<IBuff>();
-            
-        if(CoinManager.Instance.coinCount > buffs.price)
-        { 
+
+        if (CoinManager.Instance.coinCount > buffs.price)
+        {
             _baseView.AddBuff(buffs);
             Destroy(obj.gameObject);
         }
-        
     }
 
+    private void GenerateWeaponRow()
+    {
+        for (int i = 3; i < 6; i++)
+        {
+            var buff = WeaponsPrefab[Random.Range(0, WeaponsPrefab.Count)];
+            Instantiate(buff, slots[i].transform);
+        }
+    }
+    public void AddWeapon(int slotIndex)
+    {
+        var transform = slots[slotIndex].transform;
+        
+        if(transform.childCount <= 0) return;
+        var obj = transform.GetChild(0);
+        var weapon = transform.GetComponentInChildren<ITowerWeaponBuff>();
+
+        if (CoinManager.Instance.coinCount > weapon.price)
+        {
+            weapon.AddWeapon();
+            Destroy(obj.gameObject);
+        }
+    }
     public void UpdateShop(bool isNeedIncrease)
     {
         var refreshValue = 100 + 50 * _refreshCount;
@@ -75,6 +97,8 @@ public class Shop : MonoBehaviour
             ClearShop();
 
             GenerateBaseBuffRow();
+            GenerateWeaponRow();
+            
             if (isNeedIncrease)
             {
                 refreshValue = 100 + 50 * ++_refreshCount;

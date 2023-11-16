@@ -26,7 +26,10 @@
           <e p="EnemyPrefab" t="Include">
             <e p="EnemyBulletPrefab" t="Include" />
           </e>
-          <e p="Inventory" t="Include" />
+          <e p="Inventory" t="Include">
+            <e p="Buff" t="Include" />
+            <e p="Weapon" t="Include" />
+          </e>
           <e p="TowerPrefabs" t="Include">
             <e p="TowerWeaponPrefab" t="Include">
               <e p="TowerWeaponBulletPrefab" t="Include" />
@@ -56,7 +59,9 @@
               <e p="IncomeBaseBuff.cs" t="Include" />
             </e>
             <e p="BaseStats.cs" t="Include" />
-            <e p="TowerWeponBuff" t="Include" />
+            <e p="TowerWeponBuff" t="Include">
+              <e p="WeaponBuff.cs" t="Include" />
+            </e>
           </e>
           <e p="Enemy" t="Include">
             <e p="Archer" t="Include">
@@ -90,6 +95,7 @@
             <e p="Buff" t="Include">
               <e p="IBuff.cs" t="Include" />
               <e p="IBuffable.cs" t="Include" />
+              <e p="ITowerWeaponBuff.cs" t="Include" />
             </e>
             <e p="IAttacker.cs" t="Include" />
             <e p="IDamageable.cs" t="Include" />

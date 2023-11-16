@@ -4,6 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
 {
+    public GameObject currentTarget { get; set; }
+    public Queue<GameObject> allTarget { get; set; }
+
     private void Awake()
     {
         CircleCollider2D = GetComponentInChildren<CircleCollider2D>();
@@ -24,9 +27,6 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
             ShootIfNeed();
         }
     }
-
-    public GameObject currentTarget { get; set; }
-    public Queue<GameObject> allTarget { get; set; }
 
     public void UpdateNewTarget()
     {

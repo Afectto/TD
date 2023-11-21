@@ -84,6 +84,7 @@
             </e>
             <e p="Spawn Enemy" t="Include">
               <e p="EnemyFactory.cs" t="Include" />
+              <e p="EnemyInfo.cs" t="Include" />
               <e p="SpawnEnemy.cs" t="Include" />
             </e>
             <e p="Thief" t="Include">

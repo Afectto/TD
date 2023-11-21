@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -117,5 +118,10 @@ public class Shop : MonoBehaviour
             var obj = transform.GetChild(0);
             Destroy(obj.gameObject);
         } 
+    }
+
+    private void OnDestroy()
+    {
+        _updateTimer.OnTimerEnd -= UpdateShop;
     }
 }

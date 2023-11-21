@@ -6,7 +6,11 @@ public class ArmorBaseBuff : MonoBehaviour, IBuff
 {
     public float value { get; private set; }
     private float _price = 500;
-    public float price { get => _price; }
+
+    public float price
+    {
+        get => _price;
+    }
 
     private readonly List<int> _possibleValue = new List<int>();
 

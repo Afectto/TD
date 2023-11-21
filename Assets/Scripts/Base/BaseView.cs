@@ -104,6 +104,8 @@ public class BaseView : MonoBehaviour
     private void OnDestroy()
     {
         StopCoroutine(RegenerateHealth());
+        
+        _myBase.OnHealthChanged -= OnHealthChanged;
     }
 
 

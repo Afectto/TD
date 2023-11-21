@@ -5,11 +5,11 @@ using Random = UnityEngine.Random;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> enemyPrefabs;
+    [SerializeField] public List<EnemyInfo> enemyInfos;
+    
     public float spawnDelay;
     [SerializeField]public EnemyFactory enemyFactory;
     public bool isNeedSpawn = true;
-    public int countEnemyInGroup = 1;
     private void Start()
     {
         if(isNeedSpawn) StartCoroutine(Spawn());
@@ -19,10 +19,25 @@ public class SpawnEnemy : MonoBehaviour
     {
         while(true)
         {
-            enemyFactory.CreateEnemyGroup(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], countEnemyInGroup);
+            SpawnRandomEnemyGroup();
             yield return new WaitForSeconds(spawnDelay);
         }
         // ReSharper disable once IteratorNeverReturns
     }
 
+    private void SpawnRandomEnemyGroup()
+    {
+        var enemyInfo = enemyInfos[Random.Range(0, enemyInfos.Count)];
+        enemyFactory.CreateEnemyGroup(enemyInfo.enemyPrefab, enemyInfo.countInGroup);
+    }
+
+    private void SpawnEnemyGroupByPrefab(GameObject prefab)
+    {
+        var enemy = enemyInfos.Find(enemyInfo => enemyInfo.enemyPrefab == prefab);
+        if(enemy != null)
+        {
+            enemyFactory.CreateEnemyGroup(enemy.enemyPrefab, enemy.countInGroup);
+        }
+    }
+    
 }

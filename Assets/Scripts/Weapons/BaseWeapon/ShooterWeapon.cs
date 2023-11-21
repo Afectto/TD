@@ -14,6 +14,13 @@ public abstract class ShooterWeapon : Weapon, IShooter
     {
         _isShoot = true;
         yield return new WaitForSeconds(attackRate);
+        Shoot();
+
+        _isShoot = false;
+    }
+
+    protected void Shoot()
+    {
         if (target)
         {
             var mBullet = GameObject.Instantiate(bullet, shootElement.position, Quaternion.identity) as GameObject;
@@ -21,9 +28,5 @@ public abstract class ShooterWeapon : Weapon, IShooter
             bulletController.target = target;
             bulletController.firedBy = this;
         }
-
-        _isShoot = false;
     }
-
-
 }

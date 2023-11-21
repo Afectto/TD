@@ -20,25 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8a29ce1-bc0c-452d-a32a-9867a9867d28" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Buff/ITowerWeaponBuff.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Buff/ITowerWeaponBuff.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyInfo.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TD/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TD/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Armor.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Armor.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Health.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Health.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/HealthRegen.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/HealthRegen.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Incom.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Incom.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Slot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Slot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITowerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITowerWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/BaseView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/BaseView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/ArmorBaseBuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/ArmorBaseBuff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/SpawnEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/SpawnEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerBullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponsTowerArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponsTowerArray.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/ShooterWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/ShooterWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerShellBarrage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerShellBarrage.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +66,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/ThiefWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F9475216-4E14-499C-83C2-50D9839D9E96/4f/95a7b0da/Graph.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/d3/387c3844/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Stembay_test/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE7039EF-E678-478D-9C83-E73BC6A6566D/3b/67b40407/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/BaseEnemy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -85,7 +78,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Thief/ThiefEnemyTriger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Thief/TiefEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Priest/PriestEnemyTriger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/SpawnEnemy.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.18/Editor/Image.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/TowerStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/Buff/IBuffable.cs" />
@@ -101,18 +93,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/HealthBaseBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/HealthRegenBaseBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/IncomeBaseBuff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/Base.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/CoinManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/BaseHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop/UpdateTimer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Base/BaseView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/ArmorBaseBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/Timer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerArrow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/ShooterWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerShellBarrage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tower/TowerTriger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/TowerWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/TowerShooterWeapon.cs" />
@@ -128,9 +115,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerBullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponsTowerArray.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/TowerWeponBuff/ArrowWeaponBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/TowerWeponBuff/WeaponBuff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/ArmorBaseBuff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/ShooterWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerShellBarrage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Base/BaseView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/SpawnEnemy.cs" />
       </list>
     </option>
   </component>
@@ -164,10 +157,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6792">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6792" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -186,7 +179,8 @@
       <workItem from="1698307542325" duration="56771000" />
       <workItem from="1698749493918" duration="46500000" />
       <workItem from="1699436967406" duration="15184000" />
-      <workItem from="1700128338236" duration="16286000" />
+      <workItem from="1700128338236" duration="19036000" />
+      <workItem from="1700499883316" duration="5433000" />
     </task>
     <servers />
   </component>
@@ -303,10 +297,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="514" y="250" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1698503829508" />
-    <state x="567" y="253" width="785" height="534" key="find.popup" timestamp="1700142560451">
+    <state x="567" y="253" width="785" height="534" key="find.popup" timestamp="1700560219725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="567" y="253" width="785" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1700142560451" />
+    <state x="567" y="253" width="785" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1700560219725" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1698059590725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

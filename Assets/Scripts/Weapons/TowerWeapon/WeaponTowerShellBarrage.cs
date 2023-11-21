@@ -11,16 +11,10 @@ public class WeaponTowerShellBarrage : WeaponTowerBullet
         _isShoot = true;
         yield return new WaitForSeconds(attackRate);
         
-        if (target)
-        {
-            for (var i = 0; i < barrageCount; i++)
-            {
-                yield return new WaitForSeconds(delay);
-                var mBullet = GameObject.Instantiate(bullet, shootElement.position, Quaternion.identity) as GameObject;
-                bulletController = mBullet.GetComponent<Bullet>();
-                bulletController.target = target;
-                bulletController.firedBy = this;
-            }
+        for (var i = 0; i < barrageCount; i++)
+        { 
+            yield return new WaitForSeconds(delay); 
+            Shoot();
         }
         
         _isShoot = false;

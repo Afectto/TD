@@ -937,6 +937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385472015}
+  - component: {fileID: 385472016}
   m_Layer: 0
   m_Name: CannonballPool
   m_TagString: Untagged
@@ -959,6 +960,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1571041938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385472016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385472014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf95fc5b537a4c247a2ce96b2f51d312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1567109214085733029, guid: ec295c1fab663ad45bbaf19e6a5f163a, type: 3}
 --- !u!1 &394839384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414390350}
+  - component: {fileID: 414390351}
   m_Layer: 0
   m_Name: ArrowPool
   m_TagString: Untagged
@@ -1069,6 +1084,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1571041938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &414390351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414390349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf95fc5b537a4c247a2ce96b2f51d312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1567109214085733029, guid: bfe30f138f9dc6845933f2110770fc8d, type: 3}
 --- !u!1001 &440894115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10402,6 +10430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995127176}
+  - component: {fileID: 1995127177}
   m_Layer: 0
   m_Name: MultiArrowPool
   m_TagString: Untagged
@@ -10424,6 +10453,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1571041938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995127177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995127175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf95fc5b537a4c247a2ce96b2f51d312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1567109214085733029, guid: 2a9ed35a7f399674f96cd861acba1243, type: 3}
 --- !u!1 &2024649856
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,11 @@ public abstract class Bullet : MonoBehaviour
 		lastEnemyPosition = Vector3.zero;
 	}
 
+	protected void InvokeOnDestroyBullet()
+	{
+		IsOnDestroy?.Invoke(gameObject);
+	}
+	
 	public void Update()
 	{
 		if (!target.gameObject.activeSelf)
@@ -24,7 +29,7 @@ public abstract class Bullet : MonoBehaviour
 			transform.position = Vector3.MoveTowards(transform.position, lastEnemyPosition, Time.deltaTime * speed);
 			if (transform.position == lastEnemyPosition)
 			{
-				IsOnDestroy?.Invoke(gameObject);
+				InvokeOnDestroyBullet();
 			}
 			return;
 		}
@@ -55,6 +60,6 @@ public abstract class Bullet : MonoBehaviour
 		
 		var enemy = target.GetComponentInParent<Enemy>();
 		if(enemy) enemy.TakeDamage(firedBy.damage);
-		IsOnDestroy?.Invoke(gameObject);
+		InvokeOnDestroyBullet();
 	}
 }

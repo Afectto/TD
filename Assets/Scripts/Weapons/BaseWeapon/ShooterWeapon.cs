@@ -26,25 +26,30 @@ public abstract class ShooterWeapon : Weapon, IShooter
             {
                 if (BulletObjectPool[i].bulletPrefab == bullet)
                 {
-                    var pool = BulletObjectPool[i].bulletObjectPool;
-                    var mBullet = pool.Get();
-                    var bulletController = mBullet.GetComponent<Bullet>();
-                    bulletController.target = target;
-                    bulletController.firedBy = this;
-                    bulletController.transform.position = shootElement.position;
-                    
-                    void ONDestroyAction(GameObject thisBullet)
-                    {
-                        if (thisBullet == mBullet)
-                        {
-                            pool.Return(thisBullet);
-                            Bullet.IsOnDestroy -= ONDestroyAction;
-                        }
-                    }
-
-                    Bullet.IsOnDestroy += ONDestroyAction;
+                    CreateBullet(BulletObjectPool[i].bulletObjectPool);
                 }
             }
         }
     }
+
+    void CreateBullet(GameObjectPool pool)
+    {
+        var mBullet = pool.Get();
+        var bulletController = mBullet.GetComponent<Bullet>();
+        bulletController.target = target;
+        bulletController.firedBy = this;
+        bulletController.transform.position = shootElement.position;
+                    
+        void ONDestroyAction(GameObject thisBullet)
+        {
+            if (thisBullet == mBullet)
+            {
+                pool.Return(thisBullet);
+                Bullet.IsOnDestroy -= ONDestroyAction;
+            }
+        }
+
+        Bullet.IsOnDestroy += ONDestroyAction;
+    }
+    
 }

@@ -6,7 +6,8 @@ TODO:
 4) Типы урона оружий
 5) Баффы на урон и скорость атаки оружия по типам
 6) Object Pool
-  6.1) Enemy Pool
-  6.2) Enemy Bullet Pool
-  6.3) Tower Bullet Pool
+
+  6.1) Enemy Pool - Done
+  6.2) Enemy Bullet Pool - Done
+  6.3) Tower Bullet Pool - Done
    

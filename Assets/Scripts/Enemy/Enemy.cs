@@ -42,7 +42,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
             IsOnDestroy?.Invoke(gameObject);
             health = maxHealth;
             Initialize();
-            //Destroy(gameObject);
         }
         
         if(_target)

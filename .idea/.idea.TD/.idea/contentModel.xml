@@ -106,6 +106,7 @@
             <e p="ITowerWeapon.cs" t="Include" />
           </e>
           <e p="ObjectPool" t="Include">
+            <e p="BulletObjectPool.cs" t="Include" />
             <e p="EnemyObjectPool.cs" t="Include" />
             <e p="GameObjectPool.cs" t="Include" />
             <e p="PoolBase.cs" t="Include" />

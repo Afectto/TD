@@ -41,6 +41,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/BulletObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787ACC3C-9A4C-471B-A7D9-71300105AF24/e9/3a339645/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/PoolBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/5b/05593824/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
@@ -72,7 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Thief/TiefEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Priest/PriestEnemyTriger.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.18/Editor/Image.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/TowerStats.cs" />
@@ -111,18 +111,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/TowerWeponBuff/ArrowWeaponBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/TowerWeponBuff/WeaponBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/ArmorBaseBuff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/ShooterWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerShellBarrage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/BaseView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/PoolBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/SpawnEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/EnemyObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/GameObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerBullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BulletWeapon/Bullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/SpawnEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/BulletObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/ShooterWeapon.cs" />
       </list>
     </option>
   </component>
@@ -182,7 +183,7 @@
       <workItem from="1700499883316" duration="5433000" />
       <workItem from="1705396106909" duration="769000" />
       <workItem from="1705397891580" duration="158000" />
-      <workItem from="1705398062240" duration="13579000" />
+      <workItem from="1705398062240" duration="18374000" />
     </task>
     <servers />
   </component>
@@ -299,10 +300,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="514" y="250" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1698503829508" />
-    <state x="567" y="253" width="785" height="534" key="find.popup" timestamp="1705407108529">
+    <state x="567" y="253" width="785" height="534" key="find.popup" timestamp="1705415441542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="567" y="253" width="785" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1705407108529" />
+    <state x="567" y="253" width="785" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1705415441542" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1698059590725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -340,6 +341,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/ShooterWeapon.cs</url>
+          <line>24</line>
+          <properties documentPath="D:\UnityProgram\TD\Assets\Scripts\Weapons\BaseWeapon\ShooterWeapon.cs" initialLine="24">
+            <startOffsets>
+              <option value="686" />
+            </startOffsets>
+            <endOffsets>
+              <option value="764" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

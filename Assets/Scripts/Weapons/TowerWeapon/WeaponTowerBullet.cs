@@ -23,14 +23,14 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
         UpdateNewTarget();
         if (currentTarget)
         {
-            target = currentTarget.GetComponentInParent<Enemy>().transform;
+            target = currentTarget.GetComponentInParent<Enemy>()?.transform;
             ShootIfNeed();
         }
     }
 
     public void UpdateNewTarget()
     {
-        if (!currentTarget && allTarget.Count > 0)
+        if (!currentTarget?.GetComponentInParent<Enemy>() && allTarget.Count > 0)
         {
             currentTarget = allTarget.Dequeue();
         }

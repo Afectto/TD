@@ -16,7 +16,7 @@ public abstract class Bullet : MonoBehaviour
 
 	public void Update()
 	{
-		if (!target)
+		if (!target.gameObject.activeSelf)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, lastEnemyPosition, Time.deltaTime * speed);
 			if (transform.position == lastEnemyPosition)

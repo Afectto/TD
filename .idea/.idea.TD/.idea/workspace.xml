@@ -41,41 +41,37 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/BaseHealth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/PriestWeapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/79C7B132-C517-45CB-AE03-EEBEA8111C0E/7d/38706217/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/KnightWeapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787ACC3C-9A4C-471B-A7D9-71300105AF24/fb/28abc8db/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Soldier/SoldierEnemyTriger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787ACC3C-9A4C-471B-A7D9-71300105AF24/e9/3a339645/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/PoolBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/5b/05593824/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Knight/KnightEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/79/2c58e582/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/SpawnEnemy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/b2/884984f6/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96B8A6AF-C003-4A04-8A05-DDA6AEEDE1D8/d2/e8aca4be/Animation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/CoinManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/BaseHealth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Buffs/TowerWeponBuff/WeaponBuff.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/d3/387c3844/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/BaseEnemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/b2/884984f6/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/Inventory/Slot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Knight/KnightEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/Inventory/Inventory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/SpawnEnemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787ACC3C-9A4C-471B-A7D9-71300105AF24/fb/28abc8db/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/EnemyObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/KnightWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/PriestWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Soldier/SoldierEnemyTriger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/ThiefWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Dice_D20/Assets/Scripts/Buff/BuffAdvantage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Caronix_test/Assets/Scripts/Enemy/SpawnEnemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/79C7B132-C517-45CB-AE03-EEBEA8111C0E/64/19ef2f32/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/Inventory/Slot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/Inventory/Inventory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Buffs/TowerWeponBuff/WeaponBuff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96B8A6AF-C003-4A04-8A05-DDA6AEEDE1D8/2c/365d3ddc/Animator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/ThiefWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F9475216-4E14-499C-83C2-50D9839D9E96/4f/95a7b0da/Graph.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B24CC7F-A979-4ED8-AB04-312C53E6DEDD/d3/387c3844/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Stembay_test/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE7039EF-E678-478D-9C83-E73BC6A6566D/3b/67b40407/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../GameDev_test/Assets/Scripts/BaseEnemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/79C7B132-C517-45CB-AE03-EEBEA8111C0E/7d/38706217/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Knight/KnightEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Soldier/SoldierEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Thief/ThiefEnemyTriger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Thief/TiefEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Priest/PriestEnemyTriger.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.18/Editor/Image.cs" />
@@ -87,14 +83,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/IncomeBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/Buff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/BuffManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BulletWeapon/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/Buff/IBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/HealthBaseBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/HealthRegenBaseBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/BaseBuff/IncomeBaseBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/Base.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/CoinManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/BaseHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop/UpdateTimer.cs" />
@@ -112,7 +106,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/EnemyWeapon/ThiefWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon/MeleeWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITowerWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerBullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponsTowerArray.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buffs/TowerWeponBuff/ArrowWeaponBuff.cs" />
@@ -122,8 +115,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerShellBarrage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Base/BaseView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Shop.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/PoolBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/SpawnEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/EnemyObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/GameObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponTowerBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/BulletWeapon/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawn Enemy/EnemyFactory.cs" />
       </list>
     </option>
   </component>
@@ -136,14 +135,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34619626" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29658213" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34615386" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29631636" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.49535602" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="threadsIsVisibleKey" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -157,10 +156,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13912">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="13912" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -181,6 +180,9 @@
       <workItem from="1699436967406" duration="15184000" />
       <workItem from="1700128338236" duration="19036000" />
       <workItem from="1700499883316" duration="5433000" />
+      <workItem from="1705396106909" duration="769000" />
+      <workItem from="1705397891580" duration="158000" />
+      <workItem from="1705398062240" duration="13579000" />
     </task>
     <servers />
   </component>
@@ -205,82 +207,82 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="526" height="464" key="DebuggerActiveHint" timestamp="1700150209526">
+    <state width="584" height="464" key="DebuggerActiveHint" timestamp="1705409565732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="526" height="464" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1700150209526" />
-    <state width="938" height="233" key="GridCell.Tab.0.bottom" timestamp="1700150196867">
+    <state width="584" height="464" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1705409565732" />
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1705410080975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196867" />
-    <state width="938" height="233" key="GridCell.Tab.0.center" timestamp="1700150196867">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080975" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1705410080975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196867" />
-    <state width="938" height="233" key="GridCell.Tab.0.left" timestamp="1700150196867">
+    <state width="1877" height="375" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080975" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1705410080975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196867" />
-    <state width="938" height="233" key="GridCell.Tab.0.right" timestamp="1700150196867">
+    <state width="1877" height="375" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080975" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1705410080975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196867" />
-    <state width="938" height="233" key="GridCell.Tab.1.bottom" timestamp="1700150200901">
+    <state width="1877" height="375" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080975" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1705410084555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1700150200901" />
-    <state width="938" height="233" key="GridCell.Tab.1.center" timestamp="1700150200901">
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1705410084555" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1705410084555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1700150200901" />
-    <state width="938" height="233" key="GridCell.Tab.1.left" timestamp="1700150200901">
+    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1705410084555" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1705410084555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1700150200901" />
-    <state width="938" height="233" key="GridCell.Tab.1.right" timestamp="1700150200901">
+    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1705410084555" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1705410084555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1700150200901" />
-    <state width="938" height="233" key="GridCell.Tab.2.bottom" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1705410084555" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1705410080886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
-    <state width="938" height="233" key="GridCell.Tab.2.center" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080886" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1705410080886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
-    <state width="938" height="233" key="GridCell.Tab.2.left" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080886" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1705410080886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
-    <state width="938" height="233" key="GridCell.Tab.2.right" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080886" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1705410080886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
-    <state width="938" height="233" key="GridCell.Tab.3.bottom" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080886" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1705410080887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
-    <state width="938" height="233" key="GridCell.Tab.3.center" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080887" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1705410080887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
-    <state width="938" height="233" key="GridCell.Tab.3.left" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080886" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1705410080886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
-    <state width="938" height="233" key="GridCell.Tab.3.right" timestamp="1700150196778">
+    <state width="1877" height="375" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080886" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1705410080887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="233" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1700150196778" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1705410080887" />
     <state x="794" y="221" key="RiderGenerateDialog" timestamp="1700148693134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="221" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1700148693134" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1700128655346">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1705412001700">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1700128655346" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1705412001700" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1698402631307">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -297,10 +299,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="514" y="250" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1698503829508" />
-    <state x="567" y="253" width="785" height="534" key="find.popup" timestamp="1700560219725">
+    <state x="567" y="253" width="785" height="534" key="find.popup" timestamp="1705407108529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="567" y="253" width="785" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1700560219725" />
+    <state x="567" y="253" width="785" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1705407108529" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1698059590725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -314,19 +316,37 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Weapons/TowerWeapon/WeaponsTowerArray.cs</url>
-          <line>10</line>
-          <properties documentPath="C:\Users\User\TD\Assets\Scripts\Weapons\TowerWeapon\WeaponsTowerArray.cs" initialLine="10">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/PoolBase.cs</url>
+          <line>33</line>
+          <properties documentPath="D:\UnityProgram\TD\Assets\Scripts\ObjectPool\PoolBase.cs" initialLine="33">
             <startOffsets>
-              <option value="267" />
+              <option value="822" />
             </startOffsets>
             <endOffsets>
-              <option value="359" />
+              <option value="882" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="84" />
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/PoolBase.cs</url>
+          <line>41</line>
+          <properties documentPath="D:\UnityProgram\TD\Assets\Scripts\ObjectPool\PoolBase.cs" initialLine="41">
+            <startOffsets>
+              <option value="983" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1003" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#UnityEngine.Object" memberName="hideFlags" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

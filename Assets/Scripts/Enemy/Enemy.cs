@@ -19,7 +19,10 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     [HideInInspector]public Animator _animation;
     
     public float rewardValue;
-
+    
+    public delegate void OnDestroyAction(GameObject enemy);
+    public static event OnDestroyAction IsOnDestroy;
+    
     protected void Initialize()
     {
         maxHealth = health;
@@ -36,7 +39,10 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         if (health <= 0)
         {
             CoinManager.Instance.ChangeCoins(rewardValue);
-            Destroy(gameObject);
+            IsOnDestroy?.Invoke(gameObject);
+            health = maxHealth;
+            Initialize();
+            //Destroy(gameObject);
         }
         
         if(_target)
@@ -66,7 +72,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
 
     public void Move()
     {
-        if(isNeedMove)
+        if(isNeedMove && gameObject.activeSelf)
         {
             Vector2 direction = _target.position - transform.position;
             direction.Normalize();

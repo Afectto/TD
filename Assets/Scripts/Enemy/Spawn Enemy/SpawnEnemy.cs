@@ -10,9 +10,12 @@ public class SpawnEnemy : MonoBehaviour
     public float spawnDelay;
     [SerializeField]public EnemyFactory enemyFactory;
     public bool isNeedSpawn = true;
+
     private void Start()
     {
+        
         if(isNeedSpawn) StartCoroutine(Spawn());
+        
     }
 
     IEnumerator Spawn()

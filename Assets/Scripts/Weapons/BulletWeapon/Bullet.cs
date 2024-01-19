@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
@@ -8,19 +11,35 @@ public abstract class Bullet : MonoBehaviour
 	
 	public IAttacker firedBy;
 	private float distance;
+
+	private static readonly Dictionary<GameObject, Action<GameObject>> OnDestroyActions = new Dictionary<GameObject, Action<GameObject>>();
 	
-	public delegate void OnDestroyAction(GameObject enemy);
-	public static event OnDestroyAction IsOnDestroy;
+	public static void AddOnDestroyAction(GameObject bullet, Action<GameObject> action)
+	{
+		if (!OnDestroyActions.ContainsKey(bullet))
+		{
+			OnDestroyActions.Add(bullet, null);
+		}
+		OnDestroyActions[bullet] += action;
+	}
+
+	public static void RemoveOnDestroyAction(GameObject bullet, Action<GameObject> action)
+	{
+		if (OnDestroyActions.ContainsKey(bullet))
+		{
+			OnDestroyActions[bullet] -= action;
+			if (OnDestroyActions[bullet] == null)
+			{
+				OnDestroyActions.Remove(bullet);
+			}
+		}
+	}
 	
 	public void Initialize()
 	{
 		lastEnemyPosition = Vector3.zero;
 	}
 
-	protected void InvokeOnDestroyBullet()
-	{
-		IsOnDestroy?.Invoke(gameObject);
-	}
 	
 	public void Update()
 	{
@@ -61,5 +80,14 @@ public abstract class Bullet : MonoBehaviour
 		var enemy = target.GetComponentInParent<Enemy>();
 		if(enemy) enemy.TakeDamage(firedBy.damage);
 		InvokeOnDestroyBullet();
+	}
+	
+	protected void InvokeOnDestroyBullet()
+	{
+		if (OnDestroyActions.ContainsKey(gameObject))
+		{
+			OnDestroyActions[gameObject]?.Invoke(gameObject);
+			OnDestroyActions.Remove(gameObject);
+		} 
 	}
 }

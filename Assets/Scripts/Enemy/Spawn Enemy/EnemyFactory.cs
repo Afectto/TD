@@ -43,16 +43,13 @@ public class EnemyFactory  : MonoBehaviour
         Vector3 spawnPosition = groupPosition + offset;
         enemy.transform.position = spawnPosition;
 
-        void ONDestroyAction(GameObject thisEnemy)
+        void OnDestroyAction(GameObject thisEnemy)
         {
-            if (thisEnemy == enemy)
-            {
-                pool.Return(thisEnemy);
-                Enemy.IsOnDestroy -= ONDestroyAction;
-            }
+            pool.Return(thisEnemy);
+            Enemy.RemoveOnDestroyAction(thisEnemy, OnDestroyAction);
         }
 
-        Enemy.IsOnDestroy += ONDestroyAction;
+        Enemy.AddOnDestroyAction(enemy, OnDestroyAction);
     }
 
     private Vector3 GenerateRandomPosition()

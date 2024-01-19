@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BulletArrowArcher : Bullet
 {
-    public static event OnDestroyAction IsOnDestroy;
     private void Awake()
     {
         Initialize();
@@ -16,6 +15,5 @@ public class BulletArrowArcher : Bullet
         var tower = target.GetComponentInParent<Tower>();
         if(tower) tower.TakeDamage(firedBy.damage);
         InvokeOnDestroyBullet();
-        //Destroy(gameObject);
     }
 }

@@ -8,6 +8,8 @@ public abstract class ShooterWeapon : Weapon, IShooter
     public Transform shootElement { get => _shootElement; set => _shootElement = value; }
     public GameObject bullet { get => _bulletPrefab; set => _bulletPrefab = value; }
 
+    private GameObjectPool _pool;
+
     public override IEnumerator Attack()
     {
         _isShoot = true;
@@ -21,35 +23,43 @@ public abstract class ShooterWeapon : Weapon, IShooter
     {
         if (target)
         {
-            var BulletObjectPool = FindObjectsByType<BulletObjectPool>(FindObjectsSortMode.None);
-            for (int i = 0; i < BulletObjectPool.Length; i++)
-            {
-                if (BulletObjectPool[i].bulletPrefab == bullet)
-                {
-                    CreateBullet(BulletObjectPool[i].bulletObjectPool);
-                }
-            }
+            FindBulletPoolIfNeeded();
+            
+            CreateBullet();
+
         }
     }
 
-    void CreateBullet(GameObjectPool pool)
+    void FindBulletPoolIfNeeded()
     {
-        var mBullet = pool.Get();
+        if (_pool == null)
+        {
+            var bulletObjectPool = FindObjectsByType<BulletObjectPool>(FindObjectsSortMode.None);
+            for (int i = 0; i < bulletObjectPool.Length; i++)
+            {
+                if (bulletObjectPool[i].bulletPrefab == bullet)
+                {
+                    _pool = bulletObjectPool[i].bulletObjectPool;
+                }
+            }
+        } 
+    }
+
+    void CreateBullet()
+    {
+        var mBullet = _pool.Get();
         var bulletController = mBullet.GetComponent<Bullet>();
         bulletController.target = target;
         bulletController.firedBy = this;
         bulletController.transform.position = shootElement.position;
                     
-        void ONDestroyAction(GameObject thisBullet)
+        void OnDestroyAction(GameObject thisBullet)
         {
-            if (thisBullet == mBullet)
-            {
-                pool.Return(thisBullet);
-                Bullet.IsOnDestroy -= ONDestroyAction;
-            }
+            _pool.Return(thisBullet);
+            Bullet.RemoveOnDestroyAction(thisBullet, OnDestroyAction);
         }
 
-        Bullet.IsOnDestroy += ONDestroyAction;
+        Bullet.AddOnDestroyAction(mBullet, OnDestroyAction);
     }
     
 }

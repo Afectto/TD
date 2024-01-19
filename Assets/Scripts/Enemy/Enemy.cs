@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,9 +21,29 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     [HideInInspector]public Animator _animation;
     
     public float rewardValue;
-    
-    public delegate void OnDestroyAction(GameObject enemy);
-    public static event OnDestroyAction IsOnDestroy;
+
+    private static readonly Dictionary<GameObject, Action<GameObject>> OnDestroyActions = new Dictionary<GameObject, Action<GameObject>>();
+
+    public static void AddOnDestroyAction(GameObject enemy, Action<GameObject> action)
+    {
+        if (!OnDestroyActions.ContainsKey(enemy))
+        {
+            OnDestroyActions.Add(enemy, null);
+        }
+        OnDestroyActions[enemy] += action;
+    }
+
+    public static void RemoveOnDestroyAction(GameObject enemy, Action<GameObject> action)
+    {
+        if (OnDestroyActions.ContainsKey(enemy))
+        {
+            OnDestroyActions[enemy] -= action;
+            if (OnDestroyActions[enemy] == null)
+            {
+                OnDestroyActions.Remove(enemy);
+            }
+        }
+    }
     
     protected void Initialize()
     {
@@ -39,9 +61,16 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         if (health <= 0)
         {
             CoinManager.Instance.ChangeCoins(rewardValue);
-            IsOnDestroy?.Invoke(gameObject);
+            
+            if (OnDestroyActions.ContainsKey(gameObject))
+            {
+                OnDestroyActions[gameObject]?.Invoke(gameObject);
+                OnDestroyActions.Remove(gameObject);
+            }
+
             health = maxHealth;
-            Initialize();
+            healthBar.fillAmount = 1;
+            isNeedMove = true;
         }
         
         if(_target)

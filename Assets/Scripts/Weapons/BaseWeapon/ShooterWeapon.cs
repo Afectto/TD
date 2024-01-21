@@ -30,7 +30,7 @@ public abstract class ShooterWeapon : Weapon, IShooter
         }
     }
 
-    void FindBulletPoolIfNeeded()
+    private void FindBulletPoolIfNeeded()
     {
         if (_pool == null)
         {
@@ -45,21 +45,20 @@ public abstract class ShooterWeapon : Weapon, IShooter
         } 
     }
 
-    void CreateBullet()
+    private void CreateBullet()
     {
         var mBullet = _pool.Get();
         var bulletController = mBullet.GetComponent<Bullet>();
         bulletController.target = target;
         bulletController.firedBy = this;
         bulletController.transform.position = shootElement.position;
-                    
-        void OnDestroyAction(GameObject thisBullet)
-        {
-            _pool.Return(thisBullet);
-            Bullet.RemoveOnDestroyAction(thisBullet, OnDestroyAction);
-        }
-
+        
         Bullet.AddOnDestroyAction(mBullet, OnDestroyAction);
     }
     
+    private void OnDestroyAction(GameObject thisBullet)
+    {
+        _pool.Return(thisBullet);
+        Bullet.RemoveOnDestroyAction(thisBullet, OnDestroyAction);
+    }
 }

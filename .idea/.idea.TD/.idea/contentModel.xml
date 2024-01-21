@@ -125,10 +125,14 @@
               <e p="ShooterWeapon.cs" t="Include" />
               <e p="Weapon.cs" t="Include" />
             </e>
-            <e p="BulletWeapon" t="Include">
+            <e p="Bullet" t="Include">
               <e p="Bullet.cs" t="Include" />
               <e p="BulletArrowArcher.cs" t="Include" />
               <e p="BulletTower.cs" t="Include" />
+              <e p="Chain" t="Include">
+                <e p="BulletChain.cs" t="Include" />
+                <e p="ChainTriger.cs" t="Include" />
+              </e>
             </e>
             <e p="EnemyWeapon" t="Include">
               <e p="ArcherWeapon.cs" t="Include" />

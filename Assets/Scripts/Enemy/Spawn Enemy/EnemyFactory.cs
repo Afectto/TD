@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -36,7 +35,7 @@ public class EnemyFactory  : MonoBehaviour
         }
     }
 
-    void CreateEnemy(GameObjectPool pool, Vector3 groupPosition)
+    private void CreateEnemy(GameObjectPool pool, Vector3 groupPosition)
     {
         GameObject enemy = pool.Get();
         Vector3 offset = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;

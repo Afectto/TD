@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
@@ -14,36 +13,14 @@ public abstract class Bullet : MonoBehaviour
 
 	private static readonly Dictionary<GameObject, Action<GameObject>> OnDestroyActions = new Dictionary<GameObject, Action<GameObject>>();
 	
-	public static void AddOnDestroyAction(GameObject bullet, Action<GameObject> action)
-	{
-		if (!OnDestroyActions.ContainsKey(bullet))
-		{
-			OnDestroyActions.Add(bullet, null);
-		}
-		OnDestroyActions[bullet] += action;
-	}
-
-	public static void RemoveOnDestroyAction(GameObject bullet, Action<GameObject> action)
-	{
-		if (OnDestroyActions.ContainsKey(bullet))
-		{
-			OnDestroyActions[bullet] -= action;
-			if (OnDestroyActions[bullet] == null)
-			{
-				OnDestroyActions.Remove(bullet);
-			}
-		}
-	}
-	
 	public void Initialize()
 	{
 		lastEnemyPosition = Vector3.zero;
 	}
 
-	
 	public void Update()
 	{
-		if (!target.gameObject.activeSelf)
+		if (!target.parent.gameObject.activeSelf)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, lastEnemyPosition, Time.deltaTime * speed);
 			if (transform.position == lastEnemyPosition)
@@ -82,12 +59,33 @@ public abstract class Bullet : MonoBehaviour
 		InvokeOnDestroyBullet();
 	}
 	
-	protected void InvokeOnDestroyBullet()
+	protected virtual void InvokeOnDestroyBullet()
 	{
 		if (OnDestroyActions.ContainsKey(gameObject))
 		{
 			OnDestroyActions[gameObject]?.Invoke(gameObject);
 			OnDestroyActions.Remove(gameObject);
 		} 
+	}
+		
+	public static void AddOnDestroyAction(GameObject bullet, Action<GameObject> action)
+	{
+		if (!OnDestroyActions.ContainsKey(bullet))
+		{
+			OnDestroyActions.Add(bullet, null);
+		}
+		OnDestroyActions[bullet] += action;
+	}
+
+	public static void RemoveOnDestroyAction(GameObject bullet, Action<GameObject> action)
+	{
+		if (OnDestroyActions.ContainsKey(bullet))
+		{
+			OnDestroyActions[bullet] -= action;
+			if (OnDestroyActions[bullet] == null)
+			{
+				OnDestroyActions.Remove(bullet);
+			}
+		}
 	}
 }

@@ -11,9 +11,6 @@ public class Tower : MonoBehaviour
     {
 	    _baseView = FindObjectOfType<BaseView>();
 	    weaponsTowerArray = GetComponentInChildren<WeaponsTowerArray>();
-	    // weaponsTowerArray.CreateArrowWeapon();
-	    // weaponsTowerArray.CreateMultiArrowWeapon();
-	    // weaponsTowerArray.CreateCannonballShellBarrageWeapon();
     }
 
     private void Update()

@@ -20,6 +20,15 @@ public abstract class Bullet : MonoBehaviour
 
 	public void Update()
 	{
+		var enemy = target.GetComponentInParent<Enemy>();
+		if (enemy)
+		{
+			var active = enemy.gameObject.activeSelf;
+			if (!active)
+			{
+				Debug.Log("ASDFAS");
+			}
+		}
 		if (!target.parent.gameObject.activeSelf)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, lastEnemyPosition, Time.deltaTime * speed);
@@ -32,7 +41,6 @@ public abstract class Bullet : MonoBehaviour
 		
 		var targetPosition = target.position;
 		var transformPosition = transform.position;
-
 
 		transformPosition = Vector3.MoveTowards(transformPosition, targetPosition, Time.deltaTime * speed);
 		transform.position = transformPosition;

@@ -31,6 +31,7 @@ public class SpawnEnemy : MonoBehaviour
     private void SpawnRandomEnemyGroup()
     {
         var enemyInfo = enemyInfos[Random.Range(0, enemyInfos.Count)];
+        // var enemyInfo = enemyInfos[2];//DEBUG
         enemyFactory.CreateEnemyGroup(enemyInfo.enemyPrefab, enemyInfo.countInGroup);
     }
 

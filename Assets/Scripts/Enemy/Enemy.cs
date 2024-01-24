@@ -52,7 +52,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         _target = FindObjectOfType<Tower>().transform;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         isNeedMove = true;
-        _animation = GetComponent<Animator>();
+        _animation = GetComponentInChildren<Animator>();
         _weapon = GetComponent<Weapon>();
     }
     

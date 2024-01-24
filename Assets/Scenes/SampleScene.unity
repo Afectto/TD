@@ -818,15 +818,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyInfos:
-  - enemyPrefab: {fileID: 1000010755293042, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
+  - enemyPrefab: {fileID: 506557131109171197, guid: 00760a4e272d855468ea309e2641eceb, type: 3}
     countInGroup: 4
-  - enemyPrefab: {fileID: 1000010854855540, guid: a3c1faf915dc240bca8ed7566d46910c, type: 3}
+  - enemyPrefab: {fileID: 2713555770338072864, guid: 11eedfa77b2616f4ab173663cf8721dc, type: 3}
     countInGroup: 5
-  - enemyPrefab: {fileID: 1000013034572668, guid: 389c7e1a1dabb4e1e917001420b89c9a, type: 3}
+  - enemyPrefab: {fileID: 7257392497194461011, guid: 03bcafcc8147bc043a50e7c3e52ccbac, type: 3}
     countInGroup: 6
-  - enemyPrefab: {fileID: 1000011742669328, guid: 315058484cf2044ce8dcb608b4678ff6, type: 3}
+  - enemyPrefab: {fileID: 3584817132100364874, guid: 55e30f0c69779aa4bb398658097645fe, type: 3}
     countInGroup: 4
-  - enemyPrefab: {fileID: 1000012663239756, guid: 13c470c5b8dcd4854834911f7e0a9a6c, type: 3}
+  - enemyPrefab: {fileID: 921960990329421360, guid: a623b0fb8d14d8b48bd7f671e564a483, type: 3}
     countInGroup: 7
   spawnDelay: 10
   enemyFactory: {fileID: 1210492647}
@@ -4299,7 +4299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423bdf321412c6c4caa4b9c8456d4417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1000011742669328, guid: 315058484cf2044ce8dcb608b4678ff6, type: 3}
+  enemyPrefab: {fileID: 3584817132100364874, guid: 55e30f0c69779aa4bb398658097645fe, type: 3}
 --- !u!1 &949356843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,7 +5099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423bdf321412c6c4caa4b9c8456d4417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1000010755293042, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
+  enemyPrefab: {fileID: 506557131109171197, guid: 00760a4e272d855468ea309e2641eceb, type: 3}
 --- !u!1 &1848065283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10559,7 +10559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423bdf321412c6c4caa4b9c8456d4417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1000013034572668, guid: 389c7e1a1dabb4e1e917001420b89c9a, type: 3}
+  enemyPrefab: {fileID: 7257392497194461011, guid: 03bcafcc8147bc043a50e7c3e52ccbac, type: 3}
 --- !u!1 &1995127175
 GameObject:
   m_ObjectHideFlags: 0
@@ -10649,7 +10649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423bdf321412c6c4caa4b9c8456d4417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1000012663239756, guid: 13c470c5b8dcd4854834911f7e0a9a6c, type: 3}
+  enemyPrefab: {fileID: 921960990329421360, guid: a623b0fb8d14d8b48bd7f671e564a483, type: 3}
 --- !u!1 &2039568133
 GameObject:
   m_ObjectHideFlags: 0
@@ -10661,7 +10661,7 @@ GameObject:
   - component: {fileID: 2039568134}
   - component: {fileID: 2039568135}
   m_Layer: 0
-  m_Name: PeasantPool
+  m_Name: ArcherPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10694,7 +10694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423bdf321412c6c4caa4b9c8456d4417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1000010854855540, guid: a3c1faf915dc240bca8ed7566d46910c, type: 3}
+  enemyPrefab: {fileID: 2713555770338072864, guid: 11eedfa77b2616f4ab173663cf8721dc, type: 3}
 --- !u!1 &2048516233
 GameObject:
   m_ObjectHideFlags: 0

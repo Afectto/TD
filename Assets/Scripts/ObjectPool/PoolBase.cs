@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class PoolBase<T>
     private readonly Action<T> _getAction;
     private readonly Action<T> _returnAction;
     private Queue<T> _pool = new Queue<T>();
+    public List<T> allActiveObject = new List<T>();
 
     public PoolBase(Func<T> preloadFunc, Action<T> getAction, Action<T> returnAction, int preloadCount = 10)
     {
@@ -31,6 +33,7 @@ public class PoolBase<T>
     {
         T item = _pool.Count > 0 ? _pool.Dequeue() : _preloadFunc();
         _getAction(item);
+        allActiveObject.Add(item);
 
         return item;
     }
@@ -39,5 +42,11 @@ public class PoolBase<T>
     {
         _returnAction(item);
         _pool.Enqueue(item);
+        allActiveObject.Remove(item);
+    }
+
+    public List<T> GetAllActiveObject()
+    {
+        return allActiveObject;
     }
 }

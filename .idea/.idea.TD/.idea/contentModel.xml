@@ -131,7 +131,6 @@
               <e p="BulletTower.cs" t="Include" />
               <e p="Chain" t="Include">
                 <e p="BulletChain.cs" t="Include" />
-                <e p="ChainTriger.cs" t="Include" />
               </e>
             </e>
             <e p="EnemyWeapon" t="Include">

@@ -20,14 +20,13 @@ public class BulletChain : Bullet
 		
         var enemy = target.GetComponentInParent<Enemy>();
         if(enemy) enemy.TakeDamage(firedBy.damage);
-        Debug.Log($"Chain count  = {chainCount}");
+        
         if (chainCount > 0)
         {
             chainCount--;
             FindNewTarget();
             return;
         }
-        Debug.Log("CHAIN > 0");
         InvokeOnDestroyBullet();
     }
 

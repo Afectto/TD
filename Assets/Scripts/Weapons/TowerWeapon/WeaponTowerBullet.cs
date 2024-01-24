@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
 {
     public GameObject currentTarget { get; set; }
-    public Queue<GameObject> allTarget { get; set; }
+    public List<GameObject> allTarget { get; set; }
 
     private void Awake()
     {
@@ -13,7 +16,7 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
         CircleCollider2D.radius = attackRange;
         CircleCollider2D.isTrigger = true;
         
-        allTarget = new Queue<GameObject>();
+        allTarget = new List<GameObject>();
         
         shootElement = GameObject.FindGameObjectWithTag("TowerFirePoint").transform;
     }
@@ -26,13 +29,28 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
             target = currentTarget.GetComponentInParent<Enemy>()?.transform;
             ShootIfNeed();
         }
+        
+        UpdateAllTargetArray();
+    }
+
+    private void UpdateAllTargetArray()
+    {
+        foreach (var enemy in allTarget)
+        {
+            if (!enemy.activeSelf)
+            {
+                Debug.Log("REMOVE");
+                allTarget.Remove(enemy);
+            }
+        }
     }
 
     public void UpdateNewTarget()
     {
         if (!currentTarget?.GetComponentInParent<Enemy>() && allTarget.Count > 0)
         {
-            currentTarget = allTarget.Dequeue();
+            currentTarget = allTarget[Random.Range(0, allTarget.Count)];
+            allTarget.Remove(currentTarget);
         }
     }
 
@@ -40,7 +58,15 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
     {
         if (collision.CompareTag("Enemy"))
         {
-            allTarget.Enqueue(collision.gameObject);
+            allTarget.Add(collision.gameObject);
+        }
+    }
+    
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            allTarget.Remove(collision.gameObject);
         }
     }
 }

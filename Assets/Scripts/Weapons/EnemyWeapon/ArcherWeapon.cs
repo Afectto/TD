@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -21,6 +22,4 @@ public class ArcherWeapon : ShooterWeapon, IEnemyWeapon
         
         return base.Attack();
     }
-
-
 }

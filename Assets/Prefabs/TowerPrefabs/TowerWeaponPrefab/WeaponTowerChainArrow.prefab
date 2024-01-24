@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 3
-  _attackRate: 3.75
+  _attackRate: 1.75
   target: {fileID: 0}
   _isShoot: 0
   attackRange: 9

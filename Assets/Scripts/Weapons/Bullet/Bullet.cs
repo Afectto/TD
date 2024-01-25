@@ -20,8 +20,9 @@ public abstract class Bullet : MonoBehaviour
 
 	public void Update()
 	{
-		if (!target.gameObject.activeSelf)
+		if (!target || !target.gameObject.activeSelf)
 		{
+			target = null;
 			transform.position = Vector3.MoveTowards(transform.position, lastEnemyPosition, Time.deltaTime * speed);
 			if (transform.position == lastEnemyPosition)
 			{
@@ -29,7 +30,17 @@ public abstract class Bullet : MonoBehaviour
 			}
 			return;
 		}
+
+		MoveBullet();
 		
+		if (transform.position == lastEnemyPosition)
+		{
+			SetDamage();
+		}
+	}
+
+	private void MoveBullet()
+	{
 		var targetPosition = target.position;
 		var transformPosition = transform.position;
 
@@ -37,26 +48,18 @@ public abstract class Bullet : MonoBehaviour
 		transform.position = transformPosition;
 		lastEnemyPosition = targetPosition;
 		
-		
 		var diference = target.transform.position - transformPosition;
 		var rotationZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	protected virtual void SetDamage()
 	{
-		setTargetDamage(collision);
-	}
-
-	protected virtual void setTargetDamage(Collider2D collision)
-	{
-		if (!collision.CompareTag("Enemy")) return;
-		if(!target) return;
-		
 		var enemy = target.GetComponentInParent<Enemy>();
 		if(enemy) enemy.TakeDamage(firedBy.damage);
 		InvokeOnDestroyBullet();
 	}
+
 	
 	protected virtual void InvokeOnDestroyBullet()
 	{

@@ -828,7 +828,7 @@ MonoBehaviour:
     countInGroup: 4
   - enemyPrefab: {fileID: 921960990329421360, guid: a623b0fb8d14d8b48bd7f671e564a483, type: 3}
     countInGroup: 7
-  spawnDelay: 10
+  spawnDelay: 5
   enemyFactory: {fileID: 1210492647}
   isNeedSpawn: 1
 --- !u!4 &318598784

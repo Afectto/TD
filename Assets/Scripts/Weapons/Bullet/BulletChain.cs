@@ -13,14 +13,10 @@ public class BulletChain : Bullet
         _maxChainCount = chainCount;
     }
 
-    protected override void setTargetDamage(Collider2D collision)
+    protected override void SetDamage()
     {
-        if(!collision.CompareTag("Enemy")) return;
-        if(!target) return;
-		
         var enemy = target.GetComponentInParent<Enemy>();
         if(enemy) enemy.TakeDamage(firedBy.damage);
-        
         if (chainCount > 0)
         {
             chainCount--;
@@ -53,12 +49,15 @@ public class BulletChain : Bullet
     private Enemy FindEnemyInRadius(Vector3 center, float radius)
     {
         Collider2D[] allColliders = Physics2D.OverlapCircleAll(center, radius);
+        var targetEnemy = target.GetComponentInParent<Enemy>();
+        var targetEnemyID = targetEnemy.GetInstanceID();
+        
         for (int i = 0; i < allColliders.Length; i++)
         {
             if (allColliders[i].CompareTag("Enemy"))
             {
                 var enemy = allColliders[i].GetComponentInParent<Enemy>();
-                if (enemy != target.GetComponentInParent<Enemy>())
+                if (enemy.GetInstanceID() != targetEnemyID)
                 {
                     return enemy;
                 }

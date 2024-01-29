@@ -17,7 +17,7 @@ public class BaseView : MonoBehaviour
         StartCoroutine(RegenerateHealth());
         
         StartCoroutine(Income());
-        CoinManager.Instance.ChangeCoins(5000);
+        CoinManager.Instance.ChangeCoins(500000);
     }
 
     private void Awake()

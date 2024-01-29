@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,6 +11,7 @@ public class ArcherWeapon : ShooterWeapon, IEnemyWeapon
     
     public void PlayAttackAnimation()
     {
+        if(!gameObject.activeSelf) return;
         enemyAnimator.Play("attack");
         enemyAnimator.speed = enemyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length / attackRate;
     }
@@ -22,4 +22,8 @@ public class ArcherWeapon : ShooterWeapon, IEnemyWeapon
         
         return base.Attack();
     }
+    
+    
+
+
 }

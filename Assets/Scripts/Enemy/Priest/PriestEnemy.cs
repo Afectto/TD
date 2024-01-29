@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class PriestEnemy : Enemy
+public class PriestEnemy : MonoBehaviour
 {
-    private void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        Initialize();
-        _weapon._isShoot = true;
+        
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        OnUpdate();
-        _weapon.ShootIfNeed();
+        
     }
 }

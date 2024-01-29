@@ -115,4 +115,5 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
             // _animation.Play("idle");
         }
     }
+    
 }

@@ -11,7 +11,6 @@ public class PriestWeapon : ShooterWeapon, IEnemyWeapon
     
     public void PlayAttackAnimation()
     {
-        if(!gameObject.activeSelf) return;
         enemyAnimator.Play("attack");
         enemyAnimator.speed = enemyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length / attackRate;
     }

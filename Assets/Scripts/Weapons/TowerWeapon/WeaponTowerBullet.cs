@@ -19,9 +19,8 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
         allTarget = new List<GameObject>();
         
         shootElement = GameObject.FindGameObjectWithTag("TowerFirePoint").transform;
-        
     }
-    
+
     private void Update()
     {
         UpdateNewTarget();
@@ -29,6 +28,20 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
         {
             target = currentTarget.GetComponentInParent<Enemy>()?.transform;
             ShootIfNeed();
+        }
+        
+        UpdateAllTargetArray();
+    }
+
+    private void UpdateAllTargetArray()
+    {
+        foreach (var enemy in allTarget)
+        {
+            if (!enemy.activeSelf)
+            {
+                Debug.Log("REMOVE");
+                allTarget.Remove(enemy);
+            }
         }
     }
 

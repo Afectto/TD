@@ -38,7 +38,7 @@ public class EnemyFactory  : MonoBehaviour
     private void CreateEnemy(GameObjectPool pool, Vector3 groupPosition)
     {
         GameObject enemy = pool.Get();
-        Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f);
+        Vector3 offset = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0f);
         Vector3 spawnPosition = groupPosition + offset;
         enemy.transform.position = spawnPosition;
 

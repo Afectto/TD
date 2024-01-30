@@ -15,6 +15,8 @@ public abstract class MeleeWeapon : Weapon, IEnemyWeapon
     protected void Initialize()
     {
         enemyAnimator = GetComponent<Enemy>()?._animation;
+        baseDamage = damage;
+        baseAttackRate = attackRate;
     }
 
     public void PlayAttackAnimation()

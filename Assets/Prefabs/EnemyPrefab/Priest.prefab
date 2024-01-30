@@ -683,7 +683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3799442759023602018}
   - component: {fileID: 4891012160701553781}
-  - component: {fileID: 1787766875272320450}
+  - component: {fileID: 1288248033005951925}
   - component: {fileID: 296504923256904106}
   m_Layer: 0
   m_Name: Priest
@@ -738,7 +738,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1787766875272320450
+--- !u!114 &1288248033005951925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -747,7 +747,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7257392497194461011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c03f501bf3e2eb64d9c0c5675c8eec65, type: 3}
+  m_Script: {fileID: 11500000, guid: 85d8348cdd9bfbf43aaeb9a7b3e71b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f24ee0fed787484ebbdcecb0cc0fe30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Enemy: {fileID: 1787766875272320450}
+  _Enemy: {fileID: 1288248033005951925}
 --- !u!1001 &1175082576358733531
 PrefabInstance:
   m_ObjectHideFlags: 0

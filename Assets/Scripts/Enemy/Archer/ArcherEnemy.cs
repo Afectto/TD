@@ -11,4 +11,6 @@ public class ArcherEnemy : Enemy
         OnUpdate();
         _weapon.ShootIfNeed();
     }
+    
+    
 }

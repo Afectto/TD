@@ -12,6 +12,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     
     public float health { get => _health; set => _health = value; }
     public float maxHealth { get; set; }
+    public float baseMaxHealth { get; set; }
 
     public float speed {  get => _speed; set => _speed = value; }
     public bool isNeedMove;
@@ -21,6 +22,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     [HideInInspector]public Animator _animation;
     
     public float rewardValue;
+    private float baseRewardValue;
 
     private static readonly Dictionary<GameObject, Action<GameObject>> OnDestroyActions = new Dictionary<GameObject, Action<GameObject>>();
 
@@ -47,6 +49,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
     
     protected void Initialize()
     {
+        baseMaxHealth = health;
+        baseRewardValue = rewardValue;
         maxHealth = health;
         healthBar.fillAmount = 1;
         _target = FindObjectOfType<Tower>().transform;
@@ -67,10 +71,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
                 OnDestroyActions[gameObject]?.Invoke(gameObject);
                 OnDestroyActions.Remove(gameObject);
             }
-
-            health = maxHealth;
-            healthBar.fillAmount = 1;
-            isNeedMove = true;
         }
         
         if(_target)
@@ -115,5 +115,19 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
             // _animation.Play("idle");
         }
     }
-    
+
+    private void OnEnable()
+    {
+        health = baseMaxHealth * EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Health);
+        maxHealth = health;
+        rewardValue = baseRewardValue * EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Reward);
+        _weapon.AddMultiplayer(true);
+    }
+
+    private void OnDisable()
+    {
+        health = maxHealth;
+        healthBar.fillAmount = 1;
+        isNeedMove = true;
+    }
 }

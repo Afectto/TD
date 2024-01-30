@@ -17,7 +17,7 @@ public class BaseView : MonoBehaviour
         StartCoroutine(RegenerateHealth());
         
         StartCoroutine(Income());
-        CoinManager.Instance.ChangeCoins(5000);
+        CoinManager.Instance.ChangeCoins(500000);
     }
 
     private void Awake()
@@ -39,9 +39,25 @@ public class BaseView : MonoBehaviour
         
         _timer = new Timer();
         _timer.Start();
-        
+
+        StartCoroutine(IncreasedEnemyStatsMultiplayer());
+
     }
-    
+
+    private IEnumerator IncreasedEnemyStatsMultiplayer()
+    {
+        while (true)
+        {
+            yield return  new WaitForSeconds(15f);
+        
+            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.Damage, 1.15f);
+            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.Health, 1.15f);
+            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.Reward, 1.15f);
+            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.AttackRate, 1.025f);
+        }
+        // ReSharper disable once IteratorNeverReturns
+    }
+
     private void Update()
     {
         _timer.Update();

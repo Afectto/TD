@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,12 @@ public abstract class ShooterWeapon : Weapon, IShooter
     public GameObject bullet { get => _bulletPrefab; set => _bulletPrefab = value; }
 
     private GameObjectPool _pool;
+
+    protected void Initialize()
+    {
+        baseDamage = damage;
+        baseAttackRate = attackRate;
+    }
 
     public override IEnumerator Attack()
     {

@@ -18,6 +18,7 @@ public class Tower : MonoBehaviour
 	    foreach (var weapon in weaponsTowerArray.Weapons)
 	    {
 		    weapon.target = target;
+		    weapon.AddMultiplayer(false);
 		    weapon.ShootIfNeed();
 	    }
     }

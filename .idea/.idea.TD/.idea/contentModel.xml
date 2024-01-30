@@ -82,8 +82,10 @@
               <e p="SoldierEnemyTriger.cs" t="Include" />
             </e>
             <e p="Spawn Enemy" t="Include">
+              <e p="BaseStatsMultiplayer.cs" t="Include" />
               <e p="EnemyFactory.cs" t="Include" />
               <e p="EnemyInfo.cs" t="Include" />
+              <e p="EnemyStatsMultiplayer.cs" t="Include" />
               <e p="SpawnEnemy.cs" t="Include" />
             </e>
             <e p="Thief" t="Include">
@@ -119,7 +121,7 @@
             <e p="Tower.cs" t="Include" />
           </e>
           <e p="Weapons" t="Include">
-            <e p="BaseWeapon" t="Include">
+            <e p="BasedTypeWeapon" t="Include">
               <e p="MeleeWeapon.cs" t="Include" />
               <e p="ShooterWeapon.cs" t="Include" />
               <e p="Weapon.cs" t="Include" />

@@ -12,6 +12,8 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
 
     private void Awake()
     {
+        baseDamage = damage;
+        baseAttackRate = attackRate;
         CircleCollider2D = GetComponentInChildren<CircleCollider2D>();
         CircleCollider2D.radius = attackRange;
         CircleCollider2D.isTrigger = true;

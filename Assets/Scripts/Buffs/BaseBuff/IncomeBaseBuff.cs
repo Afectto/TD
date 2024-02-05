@@ -29,7 +29,7 @@ public class IncomeBaseBuff : MonoBehaviour, IBuff
 
     public BaseStats ApplyBuff(BaseStats baseStats)
     {
-        baseStats.Income += value/30;
+        baseStats.Income += value/60;
         return baseStats;
     }
 

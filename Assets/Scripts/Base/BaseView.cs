@@ -40,22 +40,6 @@ public class BaseView : MonoBehaviour
         _timer = new Timer();
         _timer.Start();
 
-        StartCoroutine(IncreasedEnemyStatsMultiplayer());
-
-    }
-
-    private IEnumerator IncreasedEnemyStatsMultiplayer()
-    {
-        while (true)
-        {
-            yield return  new WaitForSeconds(15f);
-        
-            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.Damage, 1.15f);
-            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.Health, 1.15f);
-            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.Reward, 1.15f);
-            EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.AttackRate, 1.025f);
-        }
-        // ReSharper disable once IteratorNeverReturns
     }
 
     private void Update()
@@ -76,17 +60,21 @@ public class BaseView : MonoBehaviour
 
     private float CalculateDamageRedaction(float aDamage)
     {
-        var armor = _myBase.CurrentStats.Armor;
-        float rez = 1;
-        float a = 0.95f / (1 - Mathf.Log(1000f));
-        rez = a * (1 - Mathf.Log( armor + 1));
-        
-        if(armor > 60)
-        {
-            rez = rez * armor / 60;
-        }
+        float armor = _myBase.CurrentStats.Armor;
+        float rez = 0.95f - 0.95f * Mathf.Exp(-0.01f * armor);
+        // float a = 0.95f / (1 - Mathf.Log(1000f));
+        // rez = a * (1 - Mathf.Log( armor + 1));
+        // //0.95 - 0.95 * Mathf.Exp(-0.015*x)
+        // if(armor > 60)
+        // {
+        //     rez = rez * armor / 60;
+        // }
+        return aDamage * (1 - rez);
+    }
 
-        return aDamage * (1 - Mathf.Clamp(rez, 0f, 0.95f));
+    public float GetCurrentDamageRedaction()
+    {
+        return 0.95f - 0.95f * Mathf.Exp(-0.01f * _myBase.CurrentStats.Armor);
     }
     
     private IEnumerator RegenerateHealth()
@@ -115,6 +103,11 @@ public class BaseView : MonoBehaviour
             CoinManager.Instance.ChangeCoins(_myBase.IncomePerSecond);
         }
         // ReSharper disable once IteratorNeverReturns
+    }
+
+    public BaseStats GetAllBaseStats()
+    {
+        return _myBase.CurrentStats;
     }
 
     private void OnDestroy()

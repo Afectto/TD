@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class BulletArrowArcher : Bullet
 {
     private void Awake()

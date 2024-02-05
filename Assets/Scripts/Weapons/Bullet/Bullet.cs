@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public abstract class Bullet : MonoBehaviour
 {
 	public float speed;
@@ -12,26 +13,26 @@ public abstract class Bullet : MonoBehaviour
 	private float distance;
 
 	private static readonly Dictionary<GameObject, Action<GameObject>> OnDestroyActions = new Dictionary<GameObject, Action<GameObject>>();
-	
+
 	public void Initialize()
 	{
 		lastEnemyPosition = Vector3.zero;
 	}
-
+	
 	public void Update()
 	{
 		if (!target || !target.gameObject.activeSelf)
 		{
 			target = null;
-			transform.position = Vector3.MoveTowards(transform.position, lastEnemyPosition, Time.deltaTime * speed);
+			MoveBullet(lastEnemyPosition);
 			if (transform.position == lastEnemyPosition)
 			{
 				InvokeOnDestroyBullet();
 			}
 			return;
 		}
-
-		MoveBullet();
+		
+		MoveBullet(target.position);
 		
 		if (transform.position == lastEnemyPosition)
 		{
@@ -39,16 +40,15 @@ public abstract class Bullet : MonoBehaviour
 		}
 	}
 
-	private void MoveBullet()
+	private void MoveBullet(Vector3 targetPosition)
 	{
-		var targetPosition = target.position;
 		var transformPosition = transform.position;
 
 		transformPosition = Vector3.MoveTowards(transformPosition, targetPosition, Time.deltaTime * speed);
 		transform.position = transformPosition;
 		lastEnemyPosition = targetPosition;
 		
-		var diference = target.transform.position - transformPosition;
+		var diference = targetPosition - transformPosition;
 		var rotationZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 	}

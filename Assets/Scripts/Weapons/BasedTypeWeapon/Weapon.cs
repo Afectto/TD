@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -47,9 +46,9 @@ public abstract class Weapon : MonoBehaviour, IAttacker
             }
             else
             {
-                damage = baseDamage * BaseStatsMultiplayer.GetMultiplayer(MultiplayerType.Damage);
-                float newAttackRate = baseAttackRate / BaseStatsMultiplayer.GetMultiplayer(MultiplayerType.AttackRate);
-                attackRate = newAttackRate > 0.25f ? newAttackRate : 0.25f;
+                // damage = baseDamage * BaseWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.Damage);
+                // float newAttackRate = baseAttackRate / BaseWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.AttackRate);
+                // attackRate = newAttackRate > 0.2f ? newAttackRate : 0.2f;
             }
         }
     }

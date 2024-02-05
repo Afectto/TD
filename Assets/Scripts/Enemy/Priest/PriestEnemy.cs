@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class PriestEnemy  : Enemy
 {
     private void Awake()

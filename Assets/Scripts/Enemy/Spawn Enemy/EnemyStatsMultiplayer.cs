@@ -6,7 +6,8 @@ public enum MultiplayerType
     Health,
     Damage,
     AttackRate,
-    Reward
+    Reward,
+    SpawnTime
 }
 
 public static class EnemyStatsMultiplayer
@@ -15,10 +16,11 @@ public static class EnemyStatsMultiplayer
     private static float _damageMultiplayer;
     private static float _attackRateMultiplayer;
     private static float _rewardMultiplayer;
+    private static float _spawnTimeMultiplayer;
 
     static EnemyStatsMultiplayer()
     {
-        _attackRateMultiplayer = _damageMultiplayer = _healthMultiplayer = _rewardMultiplayer = 1;
+        _attackRateMultiplayer = _damageMultiplayer = _healthMultiplayer = _rewardMultiplayer = _spawnTimeMultiplayer = 1;
     }
 
     public static void IncreasedMultiplayer(MultiplayerType type, float mult)
@@ -37,11 +39,15 @@ public static class EnemyStatsMultiplayer
             case MultiplayerType.AttackRate:
                 _attackRateMultiplayer *= mult;
                 break;
+            case MultiplayerType.SpawnTime:
+                _spawnTimeMultiplayer *= mult;
+                break;
             case MultiplayerType.All:
                 _healthMultiplayer *= mult;
                 _damageMultiplayer *= mult;
                 _attackRateMultiplayer *= mult;
                 _rewardMultiplayer *= mult;
+                _spawnTimeMultiplayer *= mult;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -64,6 +70,9 @@ public static class EnemyStatsMultiplayer
                 break;
             case MultiplayerType.Reward:
                 value = _rewardMultiplayer;
+                break;
+            case MultiplayerType.SpawnTime:
+                value = _spawnTimeMultiplayer;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);

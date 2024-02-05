@@ -129,5 +129,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         health = maxHealth;
         healthBar.fillAmount = 1;
         isNeedMove = true;
+        StopAllCoroutines();
     }
 }

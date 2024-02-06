@@ -6079,6 +6079,8 @@ MonoBehaviour:
   - {fileID: 4013585427396632626, guid: 1b47da6f32dd1174cb41d6fcf2846fee, type: 3}
   - {fileID: 4013585427396632626, guid: 07ab180373b26d747908037119e73cfe, type: 3}
   - {fileID: 4013585427396632626, guid: be812b99815c3bf46bf1fe1194f1d0b8, type: 3}
+  - {fileID: 4013585427396632626, guid: 449414d77d927de4c9bae0ac450deeb7, type: 3}
+  - {fileID: 4013585427396632626, guid: 9ff3376a53b38d24d97500bf2fcac927, type: 3}
   WeaponsPrefab:
   - {fileID: 4013585427396632626, guid: c98f5ca17c66c8249a73dc65b70b9327, type: 3}
   - {fileID: 4013585427396632626, guid: d4edff71fd0c60447a256ad196f44a86, type: 3}
@@ -9354,11 +9356,87 @@ RectTransform:
   m_AnchoredPosition: {x: -212, y: -65}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1591729180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1591729181}
+  - component: {fileID: 1591729182}
+  m_Layer: 0
+  m_Name: PirceWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1591729181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591729180}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1703179012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1591729182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591729180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad942aca444e4031be038a978103b8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1650854831 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 595252497434676425, guid: 2d495fa51b1ad894eae0e784391f4c3d, type: 3}
   m_PrefabInstance: {fileID: 19513691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1703179011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1703179012}
+  m_Layer: 0
+  m_Name: WeaponMultipayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1703179012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703179011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.2080243, y: 4.787942, z: -0.060485616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1591729181}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1706596034
 GameObject:
   m_ObjectHideFlags: 0
@@ -16761,3 +16839,4 @@ SceneRoots:
   - {fileID: 2048516235}
   - {fileID: 1436329242}
   - {fileID: 309511054}
+  - {fileID: 1703179012}

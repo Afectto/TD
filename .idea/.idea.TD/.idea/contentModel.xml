@@ -152,12 +152,13 @@
               <e p="ThiefWeapon.cs" t="Include" />
             </e>
             <e p="TowerWeapon" t="Include">
-              <e p="PirceWeapon" t="Include">
-                <e p="PirceTowerWeapon.cs" t="Include" />
-              </e>
               <e p="WeaponsTowerArray.cs" t="Include" />
               <e p="WeaponTowerBullet.cs" t="Include" />
               <e p="WeaponTowerShellBarrage.cs" t="Include" />
+              <e p="WeaponType" t="Include">
+                <e p="PirceTowerWeaponType.cs" t="Include" />
+                <e p="WeaponType.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>

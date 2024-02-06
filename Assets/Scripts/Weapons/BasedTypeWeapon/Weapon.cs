@@ -46,4 +46,14 @@ public abstract class Weapon : MonoBehaviour, IAttacker
             }
         }
     }
+
+    public float GetWeaponBaseDamage()
+    {
+        return baseDamage;
+    }
+    
+    public float GetWeaponBaseAttackRate()
+    {
+        return baseAttackRate;
+    }
 }

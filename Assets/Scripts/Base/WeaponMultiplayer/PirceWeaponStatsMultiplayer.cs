@@ -19,5 +19,6 @@ public class PierceWeaponStatsMultiplayer : BasedWeaponStatsMultiplayer
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
+        InvokeChangeMult(type, mult);
     }
 }

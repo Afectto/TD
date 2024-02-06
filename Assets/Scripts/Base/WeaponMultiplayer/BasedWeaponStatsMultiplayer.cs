@@ -7,6 +7,7 @@ public abstract class BasedWeaponStatsMultiplayer : MonoBehaviour
     protected float DamageMultiplayer;
     protected float AttackRateMultiplayer;
 
+    public event Action<MultiplayerType, float> MultiplayerChanged;
     private void Awake()
     {
         if (Instance == null)
@@ -38,8 +39,15 @@ public abstract class BasedWeaponStatsMultiplayer : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
+
+        InvokeChangeMult(type, mult);
     }
 
+    protected void InvokeChangeMult(MultiplayerType type, float mult)
+    {
+        MultiplayerChanged?.Invoke(type, mult);
+    }
+    
     public float GetMultiplayer(MultiplayerType type)
     {
         float value = 0;

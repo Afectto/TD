@@ -25,7 +25,12 @@
             <e p="EnemyBulletPrefab" t="Include" />
           </e>
           <e p="Inventory" t="Include">
-            <e p="Buff" t="Include" />
+            <e p="Buff" t="Include">
+              <e p="BaseBuff" t="Include" />
+              <e p="WeaponBuff" t="Include">
+                <e p="PirceBuff" t="Include" />
+              </e>
+            </e>
             <e p="Weapon" t="Include" />
           </e>
           <e p="TowerPrefabs" t="Include">
@@ -62,6 +67,8 @@
             </e>
             <e p="BaseStats.cs" t="Include" />
             <e p="TowerWeaponBuff" t="Include">
+              <e p="PirceAttackSpeedWeaponBuff.cs" t="Include" />
+              <e p="PirceDamageWeaponBuff.cs" t="Include" />
               <e p="WeaponBuff.cs" t="Include" />
             </e>
           </e>
@@ -145,6 +152,9 @@
               <e p="ThiefWeapon.cs" t="Include" />
             </e>
             <e p="TowerWeapon" t="Include">
+              <e p="PirceWeapon" t="Include">
+                <e p="PirceTowerWeapon.cs" t="Include" />
+              </e>
               <e p="WeaponsTowerArray.cs" t="Include" />
               <e p="WeaponTowerBullet.cs" t="Include" />
               <e p="WeaponTowerShellBarrage.cs" t="Include" />

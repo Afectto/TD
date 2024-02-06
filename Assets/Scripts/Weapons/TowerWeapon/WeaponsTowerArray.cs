@@ -10,4 +10,9 @@ public class WeaponsTowerArray : MonoBehaviour
     {
         Weapons.Add(Instantiate(WeaponsPrefab.Find(weapon => weapon.name == name), this.transform));
     }
+    
+    public void CreateArrowWeapon() 
+    {
+        Weapons.Add(Instantiate(WeaponsPrefab.Find(weapon => weapon.name == "WeaponTowerArrowShellBarrage"), this.transform));
+    }
 }

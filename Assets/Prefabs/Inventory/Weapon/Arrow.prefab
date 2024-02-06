@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tower: {fileID: 0}
-  _weaponPrefab: {fileID: 424350801904895448, guid: 339ac59d703ee64409df9c614d1f3bcd, type: 3}
+  _weaponPrefab: {fileID: 2567229622957490254, guid: 339ac59d703ee64409df9c614d1f3bcd, type: 3}
   _price: 500
 --- !u!1 &4870952468535134995
 GameObject:

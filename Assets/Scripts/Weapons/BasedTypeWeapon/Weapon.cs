@@ -44,12 +44,6 @@ public abstract class Weapon : MonoBehaviour, IAttacker
                 float newAttackRate = baseAttackRate / EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.AttackRate);
                 attackRate = newAttackRate > 0.45f ? newAttackRate : 0.45f;
             }
-            else
-            {
-                // damage = baseDamage * BaseWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.Damage);
-                // float newAttackRate = baseAttackRate / BaseWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.AttackRate);
-                // attackRate = newAttackRate > 0.2f ? newAttackRate : 0.2f;
-            }
         }
     }
 }

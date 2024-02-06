@@ -14,7 +14,7 @@ public abstract class Bullet : MonoBehaviour
 
 	private static readonly Dictionary<GameObject, Action<GameObject>> OnDestroyActions = new Dictionary<GameObject, Action<GameObject>>();
 
-	public void Initialize()
+	protected void Initialize()
 	{
 		lastEnemyPosition = Vector3.zero;
 	}

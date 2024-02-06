@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponsPrefab:
-  - {fileID: 424350801904895448, guid: 339ac59d703ee64409df9c614d1f3bcd, type: 3}
+  - {fileID: 2567229622957490254, guid: 339ac59d703ee64409df9c614d1f3bcd, type: 3}
   - {fileID: 976765223836134810, guid: 35319a3322dc2284ea780001a3a8151d, type: 3}
   - {fileID: 424350801904895448, guid: 9b42e285ff3343847b092f1b2169dbdf, type: 3}
   - {fileID: 976765223836134810, guid: dd63578bde702df4a840ff0f382e09c3, type: 3}

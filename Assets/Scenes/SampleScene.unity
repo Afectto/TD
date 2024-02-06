@@ -8348,7 +8348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1142940142
 Transform:
   m_ObjectHideFlags: 0
@@ -8505,18 +8505,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa089da14f2120043b7e6bf21cd0cc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurentBaseView: {fileID: 2048516234}
-  HealthRegen: {fileID: 170202067}
-  Armor: {fileID: 709048964}
-  DamageRedaction: {fileID: 1706596036}
-  Income: {fileID: 1061167533}
-  HealthMultiplayer: {fileID: 964595659}
-  DamageMultiplayer: {fileID: 1217295946}
-  AttackRiteMultiplayer: {fileID: 153725513}
-  RewardMultiplayer: {fileID: 703707786}
-  SpawnTimeMultiplayer: {fileID: 363582201}
-  StatsShow: {fileID: 1711720740}
-  StatsBackground: {fileID: 1142940141}
+  currentBaseView: {fileID: 2048516234}
+  healthRegen: {fileID: 170202067}
+  armor: {fileID: 709048964}
+  damageRedaction: {fileID: 1706596036}
+  income: {fileID: 1061167533}
+  healthMultiplayer: {fileID: 964595659}
+  damageMultiplayer: {fileID: 1217295946}
+  attackRiteMultiplayer: {fileID: 153725513}
+  rewardMultiplayer: {fileID: 703707786}
+  spawnTimeMultiplayer: {fileID: 363582201}
+  statsShow: {fileID: 1711720740}
+  statsBackground: {fileID: 1142940141}
 --- !u!1 &1157887372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1527873936360036871, guid: 2d495fa51b1ad894eae0e784391f4c3d, type: 3}
@@ -9508,7 +9508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1711720741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16580,6 +16580,10 @@ PrefabInstance:
     - target: {fileID: 3987716540158755782, guid: b29469965cec24849a2eb93fbdf43318, type: 3}
       propertyPath: _attackRate
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000287675090121558, guid: b29469965cec24849a2eb93fbdf43318, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5538363629207442915, guid: b29469965cec24849a2eb93fbdf43318, type: 3}
       propertyPath: m_Name

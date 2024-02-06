@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8025879407955602100}
-  - component: {fileID: 424350801904895448}
+  - component: {fileID: 2567229622957490254}
   - component: {fileID: 5893000102104793680}
   m_Layer: 0
   m_Name: WeaponTowerArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8025879407955602100
 Transform:
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &424350801904895448
+--- !u!114 &2567229622957490254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1055821524597340782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de1857e98a0b1994da3762cc02f34564, type: 3}
+  m_Script: {fileID: 11500000, guid: 99c768c1b2a64270b780bb974170c2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 3
@@ -81,7 +81,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

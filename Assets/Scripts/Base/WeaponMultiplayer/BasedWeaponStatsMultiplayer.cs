@@ -4,15 +4,15 @@ using UnityEngine;
 public abstract class BasedWeaponStatsMultiplayer : MonoBehaviour
 {
     public static BasedWeaponStatsMultiplayer Instance { get; private set; }
-    private float _damageMultiplayer;
-    private float _attackRateMultiplayer;
+    protected float DamageMultiplayer;
+    protected float AttackRateMultiplayer;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            _attackRateMultiplayer = _damageMultiplayer  = 1;
+            AttackRateMultiplayer = DamageMultiplayer  = 1;
         }
         else
         {
@@ -21,19 +21,19 @@ public abstract class BasedWeaponStatsMultiplayer : MonoBehaviour
     }
 
 
-    public void IncreasedMultiplayer(MultiplayerType type, float mult)
+    public virtual void IncreasedMultiplayer(MultiplayerType type, float mult)
     {
         switch (type)
         {
             case MultiplayerType.Damage:
-                _damageMultiplayer *= mult;
+                DamageMultiplayer *= mult;
                 break;
             case MultiplayerType.AttackRate:
-                _attackRateMultiplayer *= mult;
+                AttackRateMultiplayer *= mult;
                 break;
             case MultiplayerType.All:
-                _damageMultiplayer *= mult;
-                _attackRateMultiplayer *= mult;
+                DamageMultiplayer *= mult;
+                AttackRateMultiplayer *= mult;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -46,10 +46,10 @@ public abstract class BasedWeaponStatsMultiplayer : MonoBehaviour
         switch (type)
         {
             case MultiplayerType.Damage:
-                value = _damageMultiplayer;
+                value = DamageMultiplayer;
                 break;
             case MultiplayerType.AttackRate:
-                value = _attackRateMultiplayer;
+                value = AttackRateMultiplayer;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         isNeedMove = true;
         _animation = GetComponentInChildren<Animator>();
         _weapon = GetComponent<Weapon>();
+        
     }
     
    protected void OnUpdate()
@@ -71,11 +73,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
                 OnDestroyActions[gameObject]?.Invoke(gameObject);
                 OnDestroyActions.Remove(gameObject);
             }
-        }
-        
-        if(_target)
-        { 
-            Move();
         }
     }
 
@@ -97,7 +94,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         if (healthBar) healthBar.fillAmount = health / maxHealth;
     }
 
-
     public void Move()
     {
         if(isNeedMove && gameObject.activeSelf)
@@ -106,16 +102,15 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
             direction.Normalize();
             _rigidbody2D.velocity = direction * speed;
             transform.localScale = new Vector3(direction.x > 0 ? -1 : 1, 1, 1);
-            
             _animation.Play("walk");
         }
-        else
-        {
-            _rigidbody2D.velocity = Vector2.zero;
-            // _animation.Play("idle");
-        }
     }
-
+    
+    public void StopMove()
+    {
+        _rigidbody2D.velocity = Vector2.zero;
+    }
+    
     private void OnEnable()
     {
         health = baseMaxHealth * EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Health);
@@ -131,4 +126,5 @@ public abstract class Enemy : MonoBehaviour, IDamageable, IMovable
         isNeedMove = true;
         StopAllCoroutines();
     }
+
 }

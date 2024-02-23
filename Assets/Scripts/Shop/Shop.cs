@@ -7,9 +7,10 @@ public class Shop : MonoBehaviour
 {
     public GameObject[] slots;
     public GameObject inventory;
-    public List<GameObject> BaseBuffPrefab;
-    public List<GameObject> WeaponsPrefab;
-
+    
+    private List<GameObject> _baseBuffPrefab;
+    private List<GameObject> _weaponsPrefab;
+    
     private bool _isInventoryOn;
     private BaseView _baseView;
     
@@ -24,9 +25,25 @@ public class Shop : MonoBehaviour
         
         _baseView = FindObjectOfType<BaseView>();
         _updateTimer.OnTimerEnd += UpdateShop;
-        
+
+        _baseBuffPrefab = new List<GameObject>();
+        _weaponsPrefab = new List<GameObject>();
+        LoadPrefab("Prefabs/Inventory/Buff", true);
+        LoadPrefab("Prefabs/Inventory/Weapon", false);
+            
         GenerateBaseBuffRow();
         GenerateWeaponRow();
+    }
+    
+    void LoadPrefab(string path,bool isBuff)
+    {
+        var list = isBuff ? _baseBuffPrefab : _weaponsPrefab;
+        GameObject[] prefabs = Resources.LoadAll<GameObject>(path);
+        
+        foreach (var prefab in prefabs)
+        { 
+            list.Add(prefab);
+        }
     }
     
     public void Bug()
@@ -47,7 +64,7 @@ public class Shop : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            var buff = BaseBuffPrefab[Random.Range(0, BaseBuffPrefab.Count)];
+            var buff = _baseBuffPrefab[Random.Range(0, _baseBuffPrefab.Count)];
             Instantiate(buff, slots[i].transform);
         }
     }
@@ -71,7 +88,7 @@ public class Shop : MonoBehaviour
     {
         for (int i = 3; i < 6; i++)
         {
-            var buff = WeaponsPrefab[Random.Range(0, WeaponsPrefab.Count)];
+            var buff = _weaponsPrefab[Random.Range(0, _weaponsPrefab.Count)];
             Instantiate(buff, slots[i].transform);
         }
     }

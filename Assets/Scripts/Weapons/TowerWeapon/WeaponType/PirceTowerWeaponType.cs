@@ -8,17 +8,21 @@ public class PirceTowerWeaponType : WeaponType
     {
         Initialize();
         PierceWeaponStatsMultiplayer.Instance.MultiplayerChanged += OnMultiplayerChanged;
+        var multiInstance = PierceWeaponStatsMultiplayer.Instance;
+        Weapon.damage = BaseDamage * multiInstance.GetMultiplayer(MultiplayerType.Damage);
+        Weapon.attackRate = BaseAttackRate / multiInstance.GetMultiplayer(MultiplayerType.AttackRate);
     }
 
     protected override void OnMultiplayerChanged(MultiplayerType type, float mult)
     {
+        var multi = PierceWeaponStatsMultiplayer.Instance.GetMultiplayer(type);
         switch (type)
         {
             case MultiplayerType.Damage:
-                Weapon.damage = BaseDamage * PierceWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.Damage);
+                Weapon.damage = BaseDamage * multi;
                 break;
             case MultiplayerType.AttackRate:
-                Weapon.attackRate = BaseAttackRate / PierceWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.AttackRate);
+                Weapon.attackRate = BaseAttackRate / multi;
                 break;
         }
     }

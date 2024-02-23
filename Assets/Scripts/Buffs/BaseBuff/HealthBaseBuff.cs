@@ -7,6 +7,7 @@ public class HealthBaseBuff : MonoBehaviour, IBuff
 {
     public float value { get; private set; }
     private readonly List<int> _possibleValue = new List<int>();
+    private readonly List<int> _priceValue = new List<int>();
     private float _price = 500;
     public float price { get => _price; }
 
@@ -18,12 +19,17 @@ public class HealthBaseBuff : MonoBehaviour, IBuff
 
     public void Initialize()
     {
-        _possibleValue.Add(5);
-        _possibleValue.Add(10);
-        _possibleValue.Add(20);
+        _possibleValue.Add(500);
+        _possibleValue.Add(1000);
+        _possibleValue.Add(2000);
+        _possibleValue.Add(5000);
+        _priceValue.Add(500);
+        _priceValue.Add(1000);
+        _priceValue.Add(2500);
+        _priceValue.Add(5000);
         var index = Random.Range(0, _possibleValue.Count);
         value = _possibleValue[index];
-        _price *= index + 1;
+        _price = _priceValue[index];
         GetComponentInChildren<Text>().text = _price.ToString();
     }
 
@@ -40,11 +46,13 @@ public class HealthBaseBuff : MonoBehaviour, IBuff
         string nameSkin = "Inventory/BaseBuff/Health_";
         switch (value)
         {
-            case 5: nameSkin += "1";
+            case 500: nameSkin += "1";
                 break;
-            case 10: nameSkin += "2";
+            case 1000: nameSkin += "2";
                 break;
-            case 20: nameSkin += "3";
+            case 2000: nameSkin += "3";
+                break;
+            case 5000: nameSkin += "4";
                 break;
             default:
             {

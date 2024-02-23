@@ -8,7 +8,8 @@ public abstract class EnemyTriger : MonoBehaviour
         if (!collision.CompareTag("Tower")) return;
         
         _Enemy.isNeedMove = false;
-
+        _Enemy.StopMove();
+        
         var weapon = _Enemy.GetComponent<Weapon>();
         weapon.target = collision.transform;
         weapon._isShoot = false;

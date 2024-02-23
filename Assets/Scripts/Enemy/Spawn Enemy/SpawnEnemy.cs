@@ -39,7 +39,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(DelayToReduce);
             var currentMult = EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.SpawnTime);
-            if (currentMult < 15)
+            if (currentMult < 12)
             {
                 EnemyStatsMultiplayer.IncreasedMultiplayer(MultiplayerType.SpawnTime, 1.07f);
             }
@@ -65,8 +65,8 @@ public class SpawnEnemy : MonoBehaviour
     
     private void SpawnRandomEnemyGroup()
     {
-        // var enemyInfo = enemyInfos[Random.Range(0, enemyInfos.Count)];
-        var enemyInfo = enemyInfos[(int)EnemyType.Knight];//DEBUG
+        var enemyInfo = enemyInfos[Random.Range(0, enemyInfos.Count)];
+        // var enemyInfo = enemyInfos[(int)EnemyType.Knight];//DEBUG
         enemyFactory.CreateEnemyGroup(enemyInfo.enemyPrefab, enemyInfo.countInGroup);
     }
 

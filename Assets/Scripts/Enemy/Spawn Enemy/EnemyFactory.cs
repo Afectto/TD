@@ -41,6 +41,8 @@ public class EnemyFactory  : MonoBehaviour
         Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f);
         Vector3 spawnPosition = groupPosition + offset;
         enemy.transform.position = spawnPosition;
+        var enemyObject = enemy.GetComponent<Enemy>();
+        enemyObject.Move();
 
         void OnDestroyAction(GameObject thisEnemy)
         {

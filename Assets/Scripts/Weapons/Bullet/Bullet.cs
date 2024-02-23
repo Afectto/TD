@@ -55,8 +55,8 @@ public abstract class Bullet : MonoBehaviour
 
 	protected virtual void SetDamage()
 	{
-		var enemy = target.GetComponentInParent<Enemy>();
-		if(enemy) enemy.TakeDamage(firedBy.damage);
+		var damageable = target.GetComponentInParent<IDamageable>();
+		damageable?.TakeDamage(firedBy.damage);
 		InvokeOnDestroyBullet();
 	}
 

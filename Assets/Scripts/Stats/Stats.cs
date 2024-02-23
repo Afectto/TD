@@ -19,9 +19,12 @@ public class Stats : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rewardMultiplayer;
     [SerializeField] private TextMeshProUGUI spawnTimeMultiplayer;
 
+    
+    [SerializeField] private TextMeshProUGUI damagePierceMultiplayer;
+    [SerializeField] private TextMeshProUGUI attackRitePierceMultiplayer;
+    
     [SerializeField] private GameObject statsShow;
     [SerializeField] private GameObject statsBackground;
-
     private void Start()
     {
         statsShow.SetActive(false);
@@ -49,11 +52,13 @@ public class Stats : MonoBehaviour
         {
             UpdateBaseStats();
             UpdateEnemyMultiplayer();
+            UpdatePierceWeaponStatMultiplayer();
             yield return new WaitForSeconds(0.1f);
         }
 
         // ReSharper disable once IteratorNeverReturns
     }
+
 
     private void UpdateBaseStats()
     {
@@ -68,11 +73,11 @@ public class Stats : MonoBehaviour
 
     private void UpdateEnemyMultiplayer()
     {
-        var healthMult = FormatEnemyStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Health));
-        var damageMult = FormatEnemyStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Damage));
-        var attackRiteMult = FormatEnemyStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.AttackRate));
-        var rewardMult = FormatEnemyStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Reward));
-        var spawnTimeMult = FormatEnemyStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.SpawnTime));
+        var healthMult = FormatStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Health));
+        var damageMult = FormatStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Damage));
+        var attackRiteMult = FormatStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.AttackRate));
+        var rewardMult = FormatStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.Reward));
+        var spawnTimeMult = FormatStats(EnemyStatsMultiplayer.GetMultiplayer(MultiplayerType.SpawnTime));
 
         healthMultiplayer.text = healthMult.ToString(CultureInfo.InvariantCulture) + " %";
         damageMultiplayer.text = damageMult.ToString(CultureInfo.InvariantCulture) + " %";
@@ -81,8 +86,15 @@ public class Stats : MonoBehaviour
         spawnTimeMultiplayer.text = spawnTimeMult.ToString(CultureInfo.InvariantCulture) + " %";
     }
 
-    private float FormatEnemyStats(float value)
+    private float FormatStats(float value)
     {
         return (float) Math.Round((value - 1), 2) * 100f;
+    }
+    
+    
+    private void UpdatePierceWeaponStatMultiplayer()
+    {
+        damagePierceMultiplayer.text = FormatStats(PierceWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.Damage)) + " %";
+        attackRitePierceMultiplayer.text = FormatStats(PierceWeaponStatsMultiplayer.Instance.GetMultiplayer(MultiplayerType.AttackRate)) + " %";
     }
 }

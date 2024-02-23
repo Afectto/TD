@@ -17,7 +17,7 @@ public class BaseView : MonoBehaviour
         StartCoroutine(RegenerateHealth());
         
         StartCoroutine(Income());
-        CoinManager.Instance.ChangeCoins(500000);
+        CoinManager.Instance.ChangeCoins(5000);
     }
 
     private void Awake()
@@ -62,13 +62,6 @@ public class BaseView : MonoBehaviour
     {
         float armor = _myBase.CurrentStats.Armor;
         float rez = 0.95f - 0.95f * Mathf.Exp(-0.01f * armor);
-        // float a = 0.95f / (1 - Mathf.Log(1000f));
-        // rez = a * (1 - Mathf.Log( armor + 1));
-        // //0.95 - 0.95 * Mathf.Exp(-0.015*x)
-        // if(armor > 60)
-        // {
-        //     rez = rez * armor / 60;
-        // }
         return aDamage * (1 - rez);
     }
 

@@ -20,29 +20,29 @@
           <e p="Sprite" t="Include" />
         </e>
         <e p="Palette" t="Include" />
-        <e p="Prefabs" t="Include">
-          <e p="EnemyPrefab" t="Include">
-            <e p="EnemyBulletPrefab" t="Include" />
-          </e>
-          <e p="Inventory" t="Include">
-            <e p="Buff" t="Include">
-              <e p="BaseBuff" t="Include" />
-              <e p="WeaponBuff" t="Include">
-                <e p="PirceBuff" t="Include" />
-              </e>
-            </e>
-            <e p="Weapon" t="Include" />
-          </e>
-          <e p="TowerPrefabs" t="Include">
-            <e p="TowerWeaponPrefab" t="Include">
-              <e p="TowerWeaponBulletPrefab" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="Resources" t="Include">
           <e p="Inventory" t="Include">
             <e p="BaseBuff" t="Include" />
             <e p="WeaponBuff" t="Include" />
+          </e>
+          <e p="Prefabs" t="Include">
+            <e p="EnemyPrefab" t="Include">
+              <e p="EnemyBulletPrefab" t="Include" />
+            </e>
+            <e p="Inventory" t="Include">
+              <e p="Buff" t="Include">
+                <e p="BaseBuff" t="Include" />
+                <e p="WeaponBuff" t="Include">
+                  <e p="PirceBuff" t="Include" />
+                </e>
+              </e>
+              <e p="Weapon" t="Include" />
+            </e>
+            <e p="TowerPrefabs" t="Include">
+              <e p="TowerWeaponPrefab" t="Include">
+                <e p="TowerWeaponBulletPrefab" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
         <e p="Scenes" t="Include" />

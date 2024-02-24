@@ -35,6 +35,41 @@ public class EnemyFactory  : MonoBehaviour
         }
     }
 
+    public void CreateEnemyGroup(List<EnemyInfo> enemyInfos)
+    {
+        if(enemyInfos.Count == 0) 
+        {
+            Debug.LogError("Invalid parameters for CreateEnemyGroup.");
+            return;
+        }
+        Vector3 groupPosition = GenerateRandomPosition();
+
+        foreach (var enemyInfo in enemyInfos)
+        {
+            var pool = GetActualEnemyObjectPool(enemyInfo.enemyPrefab);
+            if (pool != null)
+            {
+                for (int j = 0; j < enemyInfo.countInGroup; j++)
+                {
+                    CreateEnemy(pool, groupPosition);
+                }
+            }
+        }
+    }
+
+    private GameObjectPool GetActualEnemyObjectPool(GameObject prefab)
+    {
+        for (int i = 0; i < listEnemyObjectPools.Count; i++)
+        {
+            if (listEnemyObjectPools[i].enemyPrefab == prefab)
+            {
+                return listEnemyObjectPools[i].enemyObjectPool;
+            }
+        }
+
+        return null;
+    }
+
     private void CreateEnemy(GameObjectPool pool, Vector3 groupPosition)
     {
         GameObject enemy = pool.Get();

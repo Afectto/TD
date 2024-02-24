@@ -15,7 +15,6 @@ public class WeaponsTowerArray : MonoBehaviour
         { 
             WeaponsPrefab.Add(weapon);
         }
-        
     }
 
     public void CreateWeapon(string name)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] public List<EnemyInfo> enemyInfos;
+    private List<EnemyGroup> _enemyGroups;
 
     private float _startSpawnDelay;
     public float spawnDelay;
@@ -15,6 +15,15 @@ public class SpawnEnemy : MonoBehaviour
     private void Start()
     {
         _startSpawnDelay = spawnDelay;
+        
+        _enemyGroups = new List<EnemyGroup>();
+        
+        var allEnemyGroup = Resources.LoadAll<EnemyGroup>("ScriptableObject/EnemyGroup");
+        foreach (var grGroup in allEnemyGroup)
+        {
+            _enemyGroups.Add(grGroup);
+        }
+        
         if (isNeedSpawn)
         {
             StartCoroutine(Spawn());
@@ -65,18 +74,9 @@ public class SpawnEnemy : MonoBehaviour
     
     private void SpawnRandomEnemyGroup()
     {
-        var enemyInfo = enemyInfos[Random.Range(0, enemyInfos.Count)];
-        // var enemyInfo = enemyInfos[(int)EnemyType.Knight];//DEBUG
-        enemyFactory.CreateEnemyGroup(enemyInfo.enemyPrefab, enemyInfo.countInGroup);
-    }
-
-    private void SpawnEnemyGroupByPrefab(GameObject prefab)
-    {
-        var enemy = enemyInfos.Find(enemyInfo => enemyInfo.enemyPrefab == prefab);
-        if(enemy != null)
-        {
-            enemyFactory.CreateEnemyGroup(enemy.enemyPrefab, enemy.countInGroup);
-        }
+        var randomGroupNumber = Random.Range(0, _enemyGroups.Count);
+        var enemyGroup = _enemyGroups[randomGroupNumber];
+        enemyFactory.CreateEnemyGroup(enemyGroup.EnemyInfos);
     }
     
 }

@@ -16,19 +16,24 @@ public class SpawnEnemy : MonoBehaviour
     {
         _startSpawnDelay = spawnDelay;
         
-        _enemyGroups = new List<EnemyGroup>();
-        
-        var allEnemyGroup = Resources.LoadAll<EnemyGroup>("ScriptableObject/EnemyGroup");
-        foreach (var grGroup in allEnemyGroup)
-        {
-            _enemyGroups.Add(grGroup);
-        }
+        AddAllEnemyGroup();
         
         if (isNeedSpawn)
         {
             StartCoroutine(Spawn());
             StartCoroutine(ReduceSpawnDelay());
             StartCoroutine(IncreasedEnemyStatsMultiplayer());
+        }
+    }
+
+    private void AddAllEnemyGroup()
+    {
+        _enemyGroups = new List<EnemyGroup>();
+        
+        var allEnemyGroup = Resources.LoadAll<EnemyGroup>("ScriptableObject/EnemyGroup");
+        foreach (var grGroup in allEnemyGroup)
+        {
+            _enemyGroups.Add(grGroup);
         }
     }
     

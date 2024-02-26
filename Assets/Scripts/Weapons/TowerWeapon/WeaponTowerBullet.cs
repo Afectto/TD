@@ -1,29 +1,34 @@
+using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
+using Unity.Jobs;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(CircleCollider2D))]
 public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
 {
     public GameObject currentTarget { get; set; }
-    public List<GameObject> allTarget { get; set; }
 
     private void Awake()
     {
         baseDamage = damage;
         baseAttackRate = attackRate;
-        CircleCollider2D = GetComponentInChildren<CircleCollider2D>();
-        CircleCollider2D.radius = attackRange;
-        CircleCollider2D.isTrigger = true;
-        
-        allTarget = new List<GameObject>();
-        
+
         shootElement = GameObject.FindGameObjectWithTag("TowerFirePoint").transform;
+        StartCoroutine(onShoot());
+    }
+
+    private IEnumerator onShoot()
+    {
+        while (true)
+        {
+            UpdateNewTarget();
+            yield return new WaitForSeconds(attackRate);
+        }
     }
 
     private void Update()
     {
-        UpdateNewTarget();
         if (currentTarget)
         {
             target = currentTarget.GetComponentInParent<Enemy>()?.transform;
@@ -33,26 +38,26 @@ public class WeaponTowerBullet : ShooterWeapon, ITowerWeapon
 
     public void UpdateNewTarget()
     {
-        if (!currentTarget?.GetComponentInParent<Enemy>() && allTarget.Count > 0)
+        if (!currentTarget?.GetComponentInParent<Enemy>())
         {
-            currentTarget = allTarget[Random.Range(0, allTarget.Count)];
-            allTarget.Remove(currentTarget);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
+            List<GameObject> enemies = new List<GameObject>();
+
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.CompareTag("Enemy"))
+                {
+                    enemies.Add(collider.gameObject);
+                }
+            }
+
+            if (enemies.Count > 0)
+            {
+                currentTarget = enemies[Random.Range(0, enemies.Count)];
+            }
+
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            allTarget.Add(collision.gameObject);
-        }
-    }
-    
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            allTarget.Remove(collision.gameObject);
-        }
-    }
 }
+

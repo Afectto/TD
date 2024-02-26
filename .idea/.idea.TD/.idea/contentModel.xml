@@ -44,6 +44,9 @@
               </e>
             </e>
           </e>
+          <e p="ScriptableObject" t="Include">
+            <e p="EnemyGroup" t="Include" />
+          </e>
         </e>
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">

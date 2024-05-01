@@ -1,3 +1,4 @@
+Gameplay video: https://drive.google.com/file/d/1A_3hxp3BhibXdAMLGr3bjc2qL_wBzShh/view?usp=sharing
 # TD
 TODO:
 1) Статистика - Done. TODO: будут нужны обновляения в будующем
